@@ -11,6 +11,9 @@ video/
 webfonts/
 fonts/
 pdf/
+includes/paypal/
+includes/paypal.php
+
 
 # Archivos
 *.txt       
