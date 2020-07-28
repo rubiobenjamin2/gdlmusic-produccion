@@ -13,4 +13,4 @@ fonts/
 pdf/
 
 # Archivos
-.txt
+*.txt        text
