@@ -1,0 +1,19 @@
+
+    #canvas_container {
+        width: 904px;
+       height: 1169px;
+        /*width: 150px;
+        height: 212px;*/
+        /*width: 595px;
+        height: 842px;
+        overflow: auto;*/
+
+       /* background: #333; */
+        background: #ffffff;
+        text-align: center;
+        border: #d5d5db67 solid 2px;
+        
+
+         /*border: 1px solid black;*/
+    direction: ltr;
+    }

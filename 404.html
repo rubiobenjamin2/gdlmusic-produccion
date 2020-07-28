@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Page Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+        * {
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        html {
+            color: #888;
+            display: table;
+            font-family: sans-serif;
+            height: 100%;
+            text-align: center;
+            width: 100%;
+        }
+
+        body {
+            display: table-cell;
+            vertical-align: middle;
+            margin: 2em auto;
+            background-color: #333;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2em;
+            font-weight: 400;
+
+        }
+
+        span{
+             color: #f9491a;
+             font-family: 'Oswald', sans-serif;
+             font-size: 5.3em;
+             font-weight: bold;
+        }
+
+        p {
+            margin: 0 auto;
+            width: 280px;
+            color: #ffffff;
+        }
+
+        a {
+            color: #f9491a;
+            text-decoration: none;
+        }
+        .wrap {
+            margin: auto;
+        }
+
+        div.logo {
+    width: 80%;
+    
+    margin: 0 0 0 470px;
+    /*float: left;*/
+}
+div.logo img{
+    width: 100%;
+    
+}
+@media only screen and (min-width:768px){
+    div.logo img{
+    
+        
+         margin: 0 0 0 30px;
+}
+}
+
+
+
+        @media only screen and (min-width: 280px) {
+div.logo {
+    width: 33%;
+        margin: auto;
+}
+            
+
+        }
+
+
+        @media only screen and (max-width: 280px) {
+
+            body, p {
+                width: 95%;
+            }
+
+            h1 {
+                font-size: 1.5em;
+                margin: 0 0 0.3em;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+   <div class="wrap">
+        
+            <span>404</span>
+            <h1>Página No Encontrada</h1>
+        <div class="logo">   <img src="img/logo2.png" alt="Logotipo GDLWebCamp"></div>
+            <p>Puedes volver al sitio presionando <a href="index.php"> aquí</a></p>
+        
+   </div>
+  
+   
+</body>
+</html>
+<!-- IE needs 512+ bytes: https://blogs.msdn.microsoft.com/ieinternals/2010/08/18/friendly-http-error-pages/ -->
