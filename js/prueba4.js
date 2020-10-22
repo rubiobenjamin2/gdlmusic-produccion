@@ -25,6 +25,9 @@
             initPageMode();
             render();
             console.log(totalPagesCount); //imprime numero de páginas
+            console.log(currentPageIndex + 1); //imprime número de página actual
+            $('#numero_pagina').text(currentPageIndex + 1);
+            $('#total_paginas').text(totalPagesCount);
         }); 
     };
     
@@ -38,6 +41,8 @@
             if (currentPageIndex < 0) {
                 currentPageIndex = 0;
             }
+            $('#numero_pagina').text(currentPageIndex + 1);
+            $('#total_paginas').text(totalPagesCount);
             render();
         }
         if (action === "next") {
@@ -48,6 +53,8 @@
             if (currentPageIndex > totalPagesCount - 1) {
                 currentPageIndex = totalPagesCount - 1;
             }
+            $('#numero_pagina').text(currentPageIndex + 1);
+            $('#total_paginas').text(totalPagesCount);
             render();
         }
     }
@@ -127,9 +134,10 @@
 
             var link = document.createElement("a");
             link.setAttribute("href", "pdf/" + ruta);
-            link.setAttribute("download", "");
+            //link.setAttribute("download", "");
             link.setAttribute("id", "milink"); 
             //generamos el click al link dentro de la funcion 
+            
             link.click();
 
 

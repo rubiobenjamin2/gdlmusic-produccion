@@ -13,11 +13,11 @@ include_once 'includes/templates/header.php'; ?>
 
 <section class="seccion contenedor">
     <h2>Descarga tu PDF</h2>
-   <?php /*session_start();
+    <?php /*session_start();
     echo "
     <pre>";
            var_dump($_SESSION);
-           echo "</pre>";*/?>
+           echo "</pre>";*/ ?>
     <p>
         Te probant ne pariatur. O est summis irure nisi id illum distinguantur
         mandaremus veniam occaecat ita illum vidisse e quid quid ut qui ingeniis non
@@ -91,7 +91,7 @@ include_once 'includes/templates/header.php'; ?>
                                         <!-- <td><embed src="pdf/<?php //echo $partitura['nombre_partitura'] 
                                                                     ?>" type="application/pdf" width="150px" height="212px"> </td> -->
                                         <td>
-                                            <a href="pdf4.php?pdf_url=<?php echo urlencode($partitura['nombre_partitura']) ?>&nom_artista=<?php echo urlencode($partitura['nombre_artista']) ?>" id="pdf4">
+                                            <a href="pdf4.php?pdf_url=<?php echo urlencode($partitura['nombre_partitura']) ?>&nom_artista=<?php echo urlencode($partitura['nombre_artista']) ?>&id_partitura=<?php echo urlencode($partitura['id_partitura']) ?>" id="pdf4">
 
                                                 <img src="img/pdf_imagen/<?php echo str_replace(".pdf", ".jpg", $partitura['nombre_partitura']) ?>" width="150px" height="212px">
 
