@@ -30,6 +30,31 @@ $(document).ready(function () {
    // $('#crear_registro').attr('disabled', true); deshabilitaba boton añadir en crear_evento pero se borro el id crear_registro del boton
    
 
+  // Validacion de Password y campos en crear-usuario
+  $('#crear_registro_usuario').attr('disabled', true); //deshabilita boton añadir en crear_admin
+
+
+  $('#usuario').on('input', function () {
+    if ($('#usuario').val() == '') {
+      $('#crear_registro_usuario').attr('disabled', true);
+      $('#crear_registro_admin').attr('disabled', true);
+    } else {
+      $('#crear_registro_usuario').attr('disabled', false);
+      $('#crear_registro_admin').attr('disabled', false);
+    }
+
+  });
+
+  $('#correo_usuario').on('input', function () {
+    if ($('#correo_usuario').val() == '') {
+      $('#crear_registro_usuario').attr('disabled', true);
+    } else {
+      $('#crear_registro_usuario').attr('disabled', false);
+    }
+
+  });
+
+  
 
     $('#password').on('input', function(){
 
@@ -41,6 +66,7 @@ $(document).ready(function () {
         $('#resultado_password').parents('.form-group').addClass('has-success').removeClass('has-error');
         $('input#password').parents('.form-group').addClass('has-success').removeClass('has-error');
         $('#crear_registro_admin').attr('disabled', false);
+        $('#crear_registro_usuario').attr('disabled', false);
         
       } 
       else {
@@ -48,6 +74,7 @@ $(document).ready(function () {
         $('#resultado_password').parents('.form-group').addClass('has-error').removeClass('has-success');
         $('input#password').parents('.form-group').addClass('has-error').removeClass('has-success');
         $('#crear_registro_admin').attr('disabled', true);
+        $('#crear_registro_usuario').attr('disabled', true);
         
       }
 
@@ -56,6 +83,7 @@ $(document).ready(function () {
           $('#resultado_password').parents('.form-group').addClass('has-error').removeClass('has-success');
           $('input#password').parents('.form-group').addClass('has-error').removeClass('has-success');
           $('#crear_registro_admin').attr('disabled', true);
+        $('#crear_registro_usuario').attr('disabled', true);
   
       }
 
@@ -64,6 +92,7 @@ $(document).ready(function () {
           $('#resultado_password').parents('.form-group').addClass('has-success').removeClass('has-error');
           $('input#password').parents('.form-group').addClass('has-success').removeClass('has-error');
           $('#crear_registro_admin').attr('disabled', false);
+        $('#crear_registro_usuario').attr('disabled', false);
           
       }
 
@@ -78,6 +107,7 @@ $(document).ready(function () {
         $('#resultado_password').parents('.form-group').addClass('has-success').removeClass('has-error');
         $('input#password').parents('.form-group').addClass('has-success').removeClass('has-error');
         $('#crear_registro_admin').attr('disabled', false);
+        $('#crear_registro_usuario').attr('disabled', false);
         
       } 
       else {
@@ -85,6 +115,7 @@ $(document).ready(function () {
         $('#resultado_password').parents('.form-group').addClass('has-error').removeClass('has-success');
         $('input#password').parents('.form-group').addClass('has-error').removeClass('has-success');
         $('#crear_registro_admin').attr('disabled', true);
+        $('#crear_registro_usuario').attr('disabled', true);
         
       }
 
@@ -93,6 +124,7 @@ $(document).ready(function () {
           $('#resultado_password').parents('.form-group').addClass('has-error').removeClass('has-success');
           $('input#password').parents('.form-group').addClass('has-error').removeClass('has-success');
           $('#crear_registro_admin').attr('disabled', true);
+        $('#crear_registro_usuario').attr('disabled', true);
   
       }
 
@@ -101,11 +133,9 @@ $(document).ready(function () {
           $('#resultado_password').parents('.form-group').addClass('has-success').removeClass('has-error');
           $('input#password').parents('.form-group').addClass('has-success').removeClass('has-error');
           $('#crear_registro_admin').attr('disabled', false);
+        $('#crear_registro_usuario').attr('disabled', false);
           
       }
-
-
-
 
 
     });
@@ -115,6 +145,7 @@ $(document).ready(function () {
         $('#resultado_password').parents('.form-group').addClass('has-error').removeClass('has-success');
         $('input#password').parents('.form-group').addClass('has-error').removeClass('has-success');
         $('#crear_registro_admin').attr('disabled', true);
+      $('#crear_registro_usuario').attr('disabled', true);
 
     } 
    //deja  activado el boton guardar si los campos estan vacios
@@ -123,8 +154,58 @@ $(document).ready(function () {
        $('#resultado_password').parents('.form-group').addClass('has-success').removeClass('has-error');
         $('input#password').parents('.form-group').addClass('has-success').removeClass('has-error');
         $('#crear_registro_admin').attr('disabled', false);
+      $('#crear_registro_usuario').attr('disabled', false);
         
     }
+
+
+    // Validación en el submit
+  usuario = document.getElementById('usuario_js');
+  admin = document.getElementById('admin_js');
+
+  if(usuario) {
+    
+    OkButton = document.getElementById('crear_registro_usuario');
+    OkButton.addEventListener('click', function () {
+      //e.preventDefault();//evita que se abra el archivo del action( osea el insertar-admin.php ahora modelo-admin) del form que esta en crear-admin.php
+      //console.log('Click');
+
+      if ($('#usuario').val() == '' || $('#correo_usuario').val() == '' || $('#password').val() == '' || $('#repetir_password').val() == '') {
+
+        $('#error').text('* Debes llenar todos los campos');
+        $('#error').parents('.form-group').addClass('has-error');
+        $('#crear_registro_usuario').attr('disabled', true);
+
+      } else {
+        $('#crear_registro_usuario').attr('disabled', false);
+      }
+
+    });
+
+  } else if (admin) {
+
+    OkButton2 = document.getElementById('crear_registro_admin');
+    OkButton2.addEventListener('click', function () {
+      //e.preventDefault();//evita que se abra el archivo del action( osea el insertar-admin.php ahora modelo-admin) del form que esta en crear-admin.php
+
+
+      if ($('#usuario').val() == '' || $('#password').val() == '' || $('#repetir_password').val() == '') {
+
+        $('#error').text('* Debes llenar todos los campos');
+        $('#error').parents('.form-group').addClass('has-error');
+        $('#crear_registro_admin').attr('disabled', true);
+
+      } else {
+        $('#crear_registro_admin').attr('disabled', false);
+      }
+
+    });
+    
+  } 
+ 
+
+
+ 
 
 
     //Date picker

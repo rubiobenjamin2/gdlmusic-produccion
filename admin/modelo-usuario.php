@@ -11,17 +11,12 @@ include_once 'funciones/funciones.php';//conecta a la bas e de datos
 }*/
 //datos mandados de ajax
 $usuario = $_POST['usuario'];
-$nombre = $_POST['nombre'];
+$correo_usuario = $_POST['correo_usuario'];
+$pagado = $_POST['pagado'];
 $password = $_POST['password'];
 $id_registro = $_POST['id_registro'];
-$nivel = $_POST['nivel'];
 
-/*echo "<pre>";
-echo var_dump($_POST);
 
-echo "</pre>";*/
-
-//NOTA: EL NOMBRE DEL USUARIO ES DE TIPO ÚNICO
 
 
 if($_POST['registro'] == 'nuevo') { //agregar-admin es el input de tipo hidden que se envia
@@ -40,15 +35,16 @@ $password_hashed = password_hash($password, PASSWORD_BCRYPT, $opciones);
 
     try {
         //aqui en insert fue tambien necesario agregar el campo editado
-    $stmt = $conn->prepare("INSERT INTO admins (usuario, nombre, password, editado, nivel) VALUES (?, ?, ?, NOW(), ?)");
-    $stmt->bind_param("sssi", $usuario, $nombre, $password_hashed, $nivel);
+    $stmt = $conn->prepare("INSERT INTO usuarios (nombre_usuario, email_usuario, password, pagado, fecha_registro,editado) VALUES (?, ?, ?, 0, NOW(), NOW())");
+    $stmt->bind_param("sss", $usuario, $correo_usuario, $password_hashed);
     $stmt->execute();
     //print_r($stmt);
     $id_registro = $stmt->insert_id;
     if($id_registro > 0) {
         
         $respuesta = array(
-            'respuesta' => 'exito',
+            'respuesta' => 'exitoso',
+            'usuario' => $usuario,
             'id_admin' => $id_registro   
         );
         //die(json_encode($respuesta));
@@ -78,8 +74,8 @@ if($_POST['registro'] == 'actualizar') {
          //asi que con este campo y NOW() agregara la hora actual creando asi un campo unico.
          //es recomendable usar esta tecnica cuando se use update
         if(empty($_POST['password'])) {
-            $stmt = $conn->prepare('UPDATE admins SET usuario = ?, nombre = ?, editado = NOW(), nivel = ? WHERE id_admin = ?');
-            $stmt->bind_param("ssii", $usuario, $nombre, $nivel, $id_registro); 
+            $stmt = $conn->prepare('UPDATE usuarios SET nombre_usuario = ?, email_usuario = ?, pagado = ?, editado = NOW() WHERE id_usuario = ?');
+            $stmt->bind_param("ssii", $usuario, $correo_usuario, $pagado, $id_registro); 
 
         } else { // si se va actualizar el password
             $opciones = array(
@@ -89,8 +85,8 @@ if($_POST['registro'] == 'actualizar') {
             //encriptado pero mas tardado para el servidor
             $hash_password = password_hash($password, PASSWORD_BCRYPT, $opciones);
     
-            $stmt = $conn->prepare('UPDATE admins SET usuario = ?, nombre = ?, password = ?, editado = NOW(), nivel = ? WHERE id_admin = ? ');
-            $stmt->bind_param("sssii", $usuario, $nombre, $hash_password, $nivel, $id_registro);
+            $stmt = $conn->prepare('UPDATE usuarios SET nombre_usuario = ?, email_usuario = ?, password = ?, pagado = ?, editado = NOW() WHERE id_usuario = ? ');
+            $stmt->bind_param("sssii", $usuario, $correo_usuario, $hash_password, $pagado, $id_registro);
 
         }
 
@@ -127,7 +123,7 @@ if($_POST['registro'] == 'eliminar') {
     $id_borrar = $_POST['id']; //id mandado de ajax
 
     try {
-        $stmt = $conn->prepare('DELETE FROM admins WHERE id_admin = ? ');
+        $stmt = $conn->prepare('DELETE FROM usuarios WHERE id_usuario = ? ');
         $stmt->bind_param('i', $id_borrar);
         $stmt->execute();
         if($stmt->affected_rows){
@@ -148,8 +144,6 @@ if($_POST['registro'] == 'eliminar') {
 
     die(json_encode($respuesta));
 }
-
-
 
 
 ?>

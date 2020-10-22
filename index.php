@@ -1,4 +1,4 @@
-<?php include_once'includes/templates/header.php'; ?>
+<?php include_once 'includes/templates/header.php'; ?>
 
 
 <!-- <section class="seccion contenedor">
@@ -32,7 +32,7 @@
                 <nav class="menu-programa">
                     <a href="#gdlmusic"><i class="fa fa-code" aria-hidden="true"></i>GdlMusic</a>
                     <a href="#ranking"><i class="fa fa-code" aria-hidden="true"></i>Ranking Descargas</a>
-                    <a href="#sesion"><i class="fa fa-code" aria-hidden="true"></i>Inicio de Sesión/Registro</a>
+                    <!-- <a href="#sesion"><i class="fa fa-code" aria-hidden="true"></i>Inicio de Sesión</a> -->
                     <!-- <a href="#mentoria"><i class="fa fa-code" aria-hidden="true"></i>Mentoria</a> -->
                 </nav>
 
@@ -56,28 +56,29 @@
                             partituras, libros u otros materiales de interés común, haciéndolo llegar por medio del
                             contacto de este sitio web.</p> <br>
                         <!-- <div class="reg">¡Sólo regístrate y listo!</div> -->
-                        
+
 
                     </div>
 
-                    <a href="#" class="button float-right">¡Sólo regístrate y listo!</a>
+                    <a href="admin/registro-usuario.php" class="button float-right">¡Sólo regístrate y listo!</a>
                 </div>
 
                 <div id="ranking" class="info-curso ocultar clearfix">
                     <div class="detalle-evento">
                         <h3>En construcción</h3>
-                        <img src="img/construccion.jpg" alt="construccion" >
+                        <img src="img/construccion.jpg" alt="construccion">
 
-                        <?php //include_once'conferencia.php'; ?>
+                        <?php //include_once'conferencia.php'; 
+                        ?>
                     </div>
 
-                    <a href="#" class="button float-right">Ver todos</a>
+                    <a href="admin/registro-usuario.php" class="button float-right">¡Sólo regístrate y listo!</a>
                 </div>
 
                 <div id="sesion" class="info-curso ocultar clearfix">
                     <div class="detalle-evento">
                         <h3>En construcción</h3>
-                        <img src="img/construccion.jpg" alt="construccion" >
+                        <img src="img/construccion.jpg" alt="construccion">
 
                     </div>
 
@@ -87,7 +88,7 @@
                 <div id="mentoria" class="info-curso ocultar clearfix">
                     <div class="detalle-evento">
                         <h3>Diseño UI/UX</h3>
-                        <img src="img/construccion.jpg" alt="construccion" >
+                        <img src="img/construccion.jpg" alt="construccion">
 
                     </div>
 
@@ -107,9 +108,10 @@
 <!--seccion programa-->
 
 <!--La seccion de invitados la llamamos desde aqui-->
-<?php //include_once'includes/templates/artistas.php'; ?>
+<?php //include_once'includes/templates/artistas.php'; 
+?>
 
-<?php include_once'includes/templates/artistas2.php'; ?>
+<?php include_once 'includes/templates/artistas2.php'; ?>
 
 
 <!-- <section class="invitados contenedor seccion">
@@ -277,7 +279,7 @@
 <div class="newsletter parallax">
     <div class="contenido contenedor">
         <p>regístrate al newletter:</p>
-        <h3>gdlwebcamp</h3>
+        <h3>gdlmusic &#9835;</h3>
         <a href="#mc_embed_signup" class="boton_newsletter button transparente">Registro</a>
     </div>
 </div>
@@ -383,4 +385,4 @@
 
 
 
-<?php include_once'includes/templates/footer.php'; ?>
+<?php include_once 'includes/templates/footer.php'; ?>

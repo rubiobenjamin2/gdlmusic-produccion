@@ -1,12 +1,12 @@
 <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.13
-    </div>
-    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
-    reserved.
-  </footer>
-
+  <div class="pull-right hidden-xs">
+    <b>Version</b> 2.4.13
   </div>
+  <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
+  reserved.
+</footer>
+
+</div>
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
@@ -39,12 +39,15 @@
 
 <!-- AdminLTE for demo purposes -->
 <script src="js/demo.js"></script>
-<script src="js/login-ajax.js"></script>
+<script src="js/login-registro-ajax.js"></script>
 <!-- iCheck 1.0.1 -->
 <script src="js/icheck.min.js"></script>
 <script src="../js/cotizador.js"></script>
 <script src="js/app.js"></script>
+<!-- <script src="js/app2.js"></script> -->
+
 
 
 </body>
+
 </html>

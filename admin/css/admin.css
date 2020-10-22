@@ -68,7 +68,52 @@ ul.lista-precios li .numero {
 }
 .input-group-btn>.btn {
     position: initial;
-    background-color: #fe4918;;
+    background-color: #fe4918;
+}
+
+/* crear-usuario.php */
+
+.login-page.usuario {
+    background: #ffffff;
+}
+.register-page {
+    background: #ffffff;
+}
+
+input.registro:focus {
+  border-color:  #fe4918;
+  box-shadow: none;
+}
+
+a.registro{
+    color: #fe4918;
+}
+
+a.registro:hover{
+    color:#e33000;
+}
+
+button.registro {
+    background-color: #fe4918;
+    color: #ffffff;
+    transition: all .3s ease;
+    border: none;
+}
+
+button.registro:hover{
+    background-color: #e33000;
+    border: none;
+    color: #ffffff;
+}
+button.registro:focus{
+    background-color: #e33000;
+    border: none;
+    color: #ffffff;
+}
+button.btn.registro:disabled {
+    background-color: #fe4918;
+    border: none;
+    color: #ffffff;
 }
 
 
