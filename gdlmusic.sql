@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 28-07-2020 a las 18:00:13
+-- Tiempo de generación: 22-10-2020 a las 04:01:42
 -- Versión del servidor: 5.7.26
 -- Versión de PHP: 7.4.2
 
@@ -43,11 +43,11 @@ INSERT INTO `admins` (`id_admin`, `usuario`, `nombre`, `password`, `editado`, `n
 (34, 'adm', 'andres', '$2y$12$PtuCFzirNeRah3o.tDu/7ud3Q5t3jBjRFjsrq5e1/2g8PutYys1aG', '2017-11-06 22:26:59', 0),
 (35, 'admin', 'benjamin', '$2y$12$lHcrW0zESdGLopYmrO4eA.b4BG.bEPRu0Q81UQb449WcwPizJoYIG', '0000-00-00 00:00:00', 1),
 (38, 'admin8', 'Toño', '$2y$12$V1tMkistZ47tyzh1/YqT3.EmW6h1vhoTdAAdpaUfEQ4PY2qHHmRkq', '2020-06-02 15:37:06', 1),
-(40, 'admin9', 'Jesús', '$2y$12$hJ2OXfcab/hME6zK8D.cbuv/ta4KpxZYGIgm/gzfUxP5eUiSiMgFy', '2020-06-02 16:23:54', 1),
-(41, 'admin10', 'Alicia Perez', '$2y$12$z26.bLlU6zlrujNPIKpByOA4ubPyzkVkaYGjlbx49nhUHOeTTeWJu', '2020-06-02 15:46:13', 0),
+(41, 'admin10', 'Alicia Perez Rubio', '$2y$12$z26.bLlU6zlrujNPIKpByOA4ubPyzkVkaYGjlbx49nhUHOeTTeWJu', '2020-10-20 17:02:32', 0),
 (42, 'admin11', 'Rosa Lara', '$2y$12$Ua6pbOXVKIh28OOiqgrELumMZ.AWCmJXK/qM8zEM3yDknqxLbkg3e', '2020-06-02 15:48:54', 0),
 (43, 'admin12', 'Tania', '$2y$12$NueVjMhLMqnsf7cfCWMaKewA5Te/71c3JILsa8g/RtbmliR3tgrSq', '2020-06-02 15:52:08', 1),
-(44, 'admin17', 'M Jordan', '$2y$12$sRxjYO1jz0h8aPsECQWwYO4FzGIwCyKmgLc4ACS1UVL2/FMSXhZPK', '2020-06-02 21:46:14', 1);
+(49, 'admin18', 'admin', '$2y$12$UdiQ0TRTHJQjgO79EZPHHOtNsdFmHHmQcnbZk2MBPkGLGyxDUQTzq', '2020-10-20 13:01:43', 1),
+(55, 'admin19', 'Lulu', '$2y$12$z7ublED1EiyPq3dVFpc80OqBg9kzqRlXj7SbhYRAr.cvLmJjQyPbq', '2020-10-20 13:49:45', 1);
 
 -- --------------------------------------------------------
 
@@ -100,6 +100,26 @@ INSERT INTO `categoria_evento` (`id_categoria`, `cat_evento`, `editado`, `icono`
 (2, 'Conferencia', '2017-11-06 17:50:04', 'fa-address-book'),
 (3, 'Talleres', '2020-06-02 18:49:55', 'fa-code'),
 (5, 'Mentoria', '2017-11-06 18:30:41', 'fa-align-center');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `descargas`
+--
+
+CREATE TABLE `descargas` (
+  `id_descargas` int(11) NOT NULL,
+  `id_descarga_partitura` int(11) NOT NULL,
+  `id_descarga_usuario` int(11) NOT NULL,
+  `fecha_descarga` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `descargas`
+--
+
+INSERT INTO `descargas` (`id_descargas`, `id_descarga_partitura`, `id_descarga_usuario`, `fecha_descarga`) VALUES
+(2, 1, 1, '2020-10-21 15:51:11');
 
 -- --------------------------------------------------------
 
@@ -282,7 +302,6 @@ INSERT INTO `registrados` (`ID_Registrado`, `nombre_registrado`, `apellido_regis
 (25, 'Juan Pablo', 'De la torre', 'jpdelatorrevaldez@gmail.com', '2017-01-17 05:33:31', '{\"un_dia\":1,\"pase_completo\":1,\"pase_2dias\":1,\"camisas\":2,\"etiquetas\":5}', '{\"eventos\":[\"taller_01\",\"taller_02\",\"taller_03\",\"taller_04\",\"taller_05\",\"taller_06\",\"taller_07\",\"taller_11\",\"taller_12\",\"taller_13\",\"taller_14\",\"taller_15\"]}', 3, '243.6', 1),
 (26, '', '', '', '2017-11-12 19:37:32', '{\"un_dia\":1,\"pase_completo\":1,\"pase_2dias\":1,\"camisas\":1,\"etiquetas\":1}', '{\"eventos\":[\"22\",\"23\"]}', 2, '61.3', 1),
 (27, 'Juan Pablo', 'De la torre', 'blackmaxxgdl18@hotmail.com', '2017-11-12 19:37:32', '{\"un_dia\":{\"cantidad\":\"1\"},\"pase_completo\":{\"cantidad\":\"1\"},\"pase_2dias\":{\"cantidad\":\"1\"},\"camisas\":2,\"etiquetas\":1}', '{\"eventos\":[\"8\",\"9\",\"7\",\"4\",\"6\",\"23\",\"24\"]}', 1, '145.6', 1),
-(28, 'ju', 'daa', 'jpdelatorrevaldez@gmail.com', '2018-10-22 01:51:03', '{\"un_dia\":{\"cantidad\":\"1\"},\"pase_completo\":{\"cantidad\":\"\"},\"pase_2dias\":{\"cantidad\":\"\"},\"camisas\":1,\"etiquetas\":2}', '{\"eventos\":[\"9\",\"7\"]}', 1, '43.3', 0),
 (29, 'Juan Pablo', 'De la t', 'jpdelatorrevaldez@gmail.com', '2018-10-22 01:51:44', '{\"un_dia\":{\"cantidad\":\"1\"},\"pase_completo\":{\"cantidad\":\"\"},\"pase_2dias\":{\"cantidad\":\"\"},\"camisas\":2,\"etiquetas\":1}', '{\"eventos\":[\"10\",\"6\"]}', 1, '50.6', 1),
 (30, 'juan', 'ad', 'correo@correo.com', '2018-10-22 02:11:26', '{\"un_dia\":{\"cantidad\":\"1\"},\"pase_completo\":{\"cantidad\":\"\"},\"pase_2dias\":{\"cantidad\":\"\"},\"camisas\":1,\"etiquetas\":2}', '{\"eventos\":[\"7\"]}', 1, '43.3', 1),
 (31, 'juan', 'de la t', 'correo@correo.com', '2018-10-22 02:27:21', '{\"un_dia\":{\"cantidad\":\"1\"},\"pase_completo\":{\"cantidad\":\"\"},\"pase_2dias\":{\"cantidad\":\"\"},\"camisas\":1,\"etiquetas\":2}', '{\"eventos\":[\"8\"]}', 2, '43.3', 1),
@@ -301,6 +320,48 @@ INSERT INTO `registrados` (`ID_Registrado`, `nombre_registrado`, `apellido_regis
 (44, 'Juan', 'De la t', 'correo@correo.com', '2018-10-22 05:04:18', '{\"un_dia\":{\"cantidad\":\"1\"},\"pase_completo\":{\"cantidad\":\"\"},\"pase_2dias\":{\"cantidad\":\"\"},\"camisas\":1}', '{\"eventos\":[\"8\"]}', 2, '39.3', 1),
 (45, 'Juan Pablo', 'DE', 'correo@correo.com', '2018-10-22 05:13:39', '{\"un_dia\":{\"cantidad\":\"1\"},\"pase_completo\":{\"cantidad\":\"\"},\"pase_2dias\":{\"cantidad\":\"\"},\"camisas\":1}', '{\"eventos\":[\"6\"]}', 2, '39.3', 1),
 (46, 'ca', 'ju', 'correo@correo.com', '2018-10-22 06:19:41', '{\"un_dia\":{\"cantidad\":\"1\"},\"pase_completo\":{\"cantidad\":\"\"},\"pase_2dias\":{\"cantidad\":\"\"},\"etiquetas\":1}', '{\"eventos\":[\"8\"]}', 1, '32', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id_usuario` int(11) NOT NULL,
+  `nombre_usuario` varchar(50) NOT NULL,
+  `email_usuario` varchar(100) NOT NULL,
+  `password` varchar(60) NOT NULL,
+  `pagado` tinyint(5) NOT NULL,
+  `fecha_registro` datetime NOT NULL,
+  `editado` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `email_usuario`, `password`, `pagado`, `fecha_registro`, `editado`) VALUES
+(1, 'Benjamin Rubio', 'rubiobenjamin2@gmail.com', '$2y$12$Xksa39r4MRbtlSyDRkJNwesErFvi6deL9EKen7oLdgK61NdI/ff/y', 0, '2020-10-16 19:29:17', '2020-10-20 16:43:23'),
+(2, 'Benjamin2', 'rubiobenjamin2@gmail.com', '$2y$12$vokeQhqUbTS4CeXtumvZ0.bu5ENj8q5yPvNEXplvNZGLVwdHP32Ay', 0, '2020-10-16 19:34:51', '2020-10-16 19:34:51'),
+(3, 'Benjamin3', 'rubiobenjamin2@gmail.com', '$2y$12$eL7XufUr43fS2BgOspmuUev4lgYpJkQ/8czljWfgun3q4jiZ7G6UO', 0, '2020-10-16 19:36:42', '2020-10-16 19:36:42'),
+(4, 'Benjamin3', 'rubiobenjamin2@gmail.com', '$2y$12$yxOrMsIEm61WapjpIzL.P.xnR/nPpniYeieZAi8qYxNGdBzI8PMam', 0, '2020-10-16 19:37:00', '2020-10-16 19:37:00'),
+(5, 'Benjamin4', 'rubiobenjamin2@gmail.com', '$2y$12$nrMBg4BQDhGZqcU5OL.qkeH1tzw2BOdeM4pWV48f3U/pcj/Pqbr5S', 0, '2020-10-16 19:38:46', '2020-10-16 19:38:46'),
+(6, 'Benjamin5', 'rubiobenjamin2@gmail.com', '$2y$12$1DPk76T0N6UGlL3B8K5/k.Ay.ri84OTT9bIYaACf0fgHEI6oyeSEW', 0, '2020-10-16 19:49:53', '2020-10-16 19:49:53'),
+(7, 'Benjamin6', 'rubiobenjamin2@gmail.com', '$2y$12$Kf1eth9YyPBjCBvfRyGeeOd2Dek0.2n9QeRoZu/08YO9fd374ZooW', 0, '2020-10-16 19:51:18', '2020-10-16 19:51:18'),
+(8, 'Benjamin7', 'rubiobenjamin2@gmail.com', '$2y$12$42vyz.OXMMaybxuHt70ekuQRDUumbw3IHMEGmEUHI5JCa8X0wi1fG', 0, '2020-10-16 19:59:42', '2020-10-16 19:59:42'),
+(9, 'Benjamin8', 'rubiobenjamin2@gmail.com', '$2y$12$um8SqgyboBTA50WOpWmJ..drPIb9IF7XTcxj6m8C5BKiJI7H.Af8i', 0, '2020-10-16 20:01:23', '2020-10-16 20:01:23'),
+(10, 'Benjamin9', 'rubiobenjamin2@gmail.com', '$2y$12$ruBKJWyd3qQ2B8sSC/l7o.n.TBijVDozaBKxaUwrOa8udH0tBC7oi', 0, '2020-10-16 20:14:45', '2020-10-16 20:14:45'),
+(13, 'Benjamin10  Madrid', '12@12', '$2y$12$Seb1wDQ1yDbAXViWMPCzlOlAXTPDGLSy2PDWx/05GuypEP5qe6qgq', 0, '2020-10-19 21:44:55', '2020-10-20 16:48:46'),
+(14, 'Benjamin11', '12@12', '$2y$12$3WLPtr8MAdUJ/rc4//cL1..hj9P6bxIOlyaQrnMG4ASPLobSQWX4K', 0, '2020-10-19 23:36:44', '2020-10-19 23:36:44'),
+(15, 'Benjamin12', '1', '$2y$12$mTn6oDNpcwYJPwCpAdOFMeBS3qpcoD80u.4z2fBEiOhmA.pCEcWmy', 0, '2020-10-20 00:45:27', '2020-10-20 00:45:27'),
+(16, 'Benjamin12', '1', '$2y$12$bPd6g33MOg4E6QzLrJe7Du5GyT0bpKKcs7fAZyZGTmbLAOqxSqnly', 0, '2020-10-20 00:45:27', '2020-10-20 00:45:27'),
+(17, 'Benjamin13', 'rubiobenjamin2@gmail.com', '$2y$12$MeWYFWwDVaRIf5lMKTP/veo4shmHpyVtJTkRtjgMaCtM8ca/poPru', 0, '2020-10-20 00:50:49', '2020-10-20 00:50:49'),
+(18, 'Benjamin13', 'rubiobenjamin2@gmail.com', '$2y$12$HugARUeg9HEXDHS2FAJKx.fpHayaYE44Q4mbA9Z6dnv3EO004tYdG', 0, '2020-10-20 00:50:49', '2020-10-20 00:50:49'),
+(19, 'Benjamin14', 'rubiobenjamin2@gmail.com', '$2y$12$Y9h6CHX0fq/5Wy8SIMq/ouC9VwseElRbUSnEh7wDYi7OU4PXow4zK', 0, '2020-10-20 13:52:48', '2020-10-20 13:52:48'),
+(20, 'Benjamin15', 'rubiobenjamin2@gmail.com', '$2y$12$pTckkpiMzQ7et0A9kxsIHutMfzesfQ7.I9pSAC87EPl.NyL4tZ.NC', 0, '2020-10-20 14:01:20', '2020-10-20 14:01:20'),
+(21, 'Benjamin16', 'rubiobenjamin2@gmail.com', '$2y$12$/YOtgo17bGZZPboBfbM7L.l9KAOyiJAgGt/.Gg/2lSluKHie4MTWy', 0, '2020-10-20 14:05:02', '2020-10-20 14:05:02'),
+(22, 'Benjamin17', 'rubiobenjamin2@gmail.com', '$2y$12$gHhGzuFhluBU/e1FI8t1Tun07rNBV24ryx7udYitLjJpDQsgF8Byy', 0, '2020-10-20 17:18:32', '2020-10-20 17:18:32');
 
 --
 -- Índices para tablas volcadas
@@ -324,6 +385,14 @@ ALTER TABLE `artistas`
 --
 ALTER TABLE `categoria_evento`
   ADD PRIMARY KEY (`id_categoria`);
+
+--
+-- Indices de la tabla `descargas`
+--
+ALTER TABLE `descargas`
+  ADD PRIMARY KEY (`id_descargas`),
+  ADD KEY `id_descarga_partitura` (`id_descarga_partitura`),
+  ADD KEY `id_descarga_usuario` (`id_descarga_usuario`);
 
 --
 -- Indices de la tabla `estilo`
@@ -366,6 +435,12 @@ ALTER TABLE `registrados`
   ADD KEY `regalo` (`regalo`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id_usuario`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -373,7 +448,7 @@ ALTER TABLE `registrados`
 -- AUTO_INCREMENT de la tabla `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de la tabla `artistas`
@@ -386,6 +461,12 @@ ALTER TABLE `artistas`
 --
 ALTER TABLE `categoria_evento`
   MODIFY `id_categoria` tinyint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `descargas`
+--
+ALTER TABLE `descargas`
+  MODIFY `id_descargas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `estilo`
@@ -424,8 +505,21 @@ ALTER TABLE `registrados`
   MODIFY `ID_Registrado` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `descargas`
+--
+ALTER TABLE `descargas`
+  ADD CONSTRAINT `descargas_ibfk_1` FOREIGN KEY (`id_descarga_partitura`) REFERENCES `partituras` (`id_partitura`),
+  ADD CONSTRAINT `descargas_ibfk_2` FOREIGN KEY (`id_descarga_usuario`) REFERENCES `usuarios` (`id_usuario`);
 
 --
 -- Filtros para la tabla `eventos`
