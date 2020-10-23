@@ -12,6 +12,7 @@ function usuario_autenticado() {
 //Esta función revisa que la Sesión tenga información osea que se haya abierto sesión de forma efectiva
 function revisar_usuario() {
     return isset($_SESSION['nombre_usuario']);
+    
 }
 
 session_start();

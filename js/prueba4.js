@@ -134,10 +134,36 @@
 
             var link = document.createElement("a");
             link.setAttribute("href", "pdf/" + ruta);
-            //link.setAttribute("download", "");
+            link.setAttribute("download", "");
             link.setAttribute("id", "milink"); 
             //generamos el click al link dentro de la funcion 
             
+            link.click();
+
+
+            //document.getElementById('download').append(link);
+
+            //document.getElementById('download').innerHTML='<a href="pdf/Consulta de Adeudo Predial __ Municipio de Zapopan Jalisco.pdf" id="milink" download>Download</a>';
+
+
+            /*var ancla = document.getElementById("milink2");
+            var var1 = ancla.getAttribute("href");*/
+
+            //console.log(var1);
+        }); 
+
+    // Visor PDF
+    document.getElementById('ver-pdf')
+        .addEventListener('click', (e) => {
+            var ruta = document.querySelector("#nombre_partitura").value;
+            console.log("ruta:" + ruta);
+            
+            var link = document.createElement("a");
+            link.setAttribute("href", "web/viewer.html?file=../pdf/" + ruta);
+            //link.setAttribute("download", "");
+            //link.setAttribute("id", "milink");
+            //generamos el click al link dentro de la funcion 
+
             link.click();
 
 

@@ -1,9 +1,6 @@
 <?php
 
-if(isset($_POST['insertar_descarga']) ) {
-   
-    
-}
+
 session_start();
 $id_usuario = $_SESSION['id_usuario'];
 $var_doc = "";
@@ -16,7 +13,7 @@ $var_temp2 = str_replace("_gm", "", $var_temp1);
 $var_artista = $_GET['nom_artista'];
 $id_partitura = $_GET['id_partitura'];
 
- echo "<pre>";
+echo "<pre>";
 var_dump($_GET);
 echo "El usuario es: " . $id_usuario;
 echo "</pre>";
@@ -29,6 +26,9 @@ include_once 'includes/funciones/bd_conexion.php';
     echo "No conectado";
 }*/
 include_once 'includes/templates/header.php';
+
+$contador = $contador + 0;
+$contador++;
 
 if (isset($_POST['insertar_descarga'])) { // si se da submit al botón descargas para insertar en la tabla descargas
 
@@ -49,6 +49,7 @@ if (isset($_POST['insertar_descarga'])) { // si se da submit al botón descargas
    
 }
 
+echo "Contador" . $contador;
 
 ?>
 
@@ -57,44 +58,53 @@ if (isset($_POST['insertar_descarga'])) { // si se da submit al botón descargas
 
 <section class="seccion contenedor">
     <h2><?php echo  $var_temp2 ?> - <?php echo  $var_artista ?></h2>
+   
     <!-- Implement a Simple PDF Viewer with PDF.js -->
-    <form name="pdf-form" method="post">
 
-        <div id="documentos">
 
-            <div id="app">
-                <!-- <div class="pegajoso"> -->
-                <div role="toolbar" id="toolbar" class="text-center">
-                    <div id="descarga">
-                        <button type="submit" id="descarga" class="descarga" title="Descarga">Download
-                        </button>
-                    </div>
-                    <div id="pager">
-                        <button data-pager="prev">prev</button>
-                        <button data-pager="next">next</button>
+    <div id="documentos">
 
-                    </div>
-                    <div><label id="numero_pagina"></label> / <label id="total_paginas"></label></div>
-                    <div id="page-mode">
-                        <label>Page Mode <input type="number" value="1" min="1" /></label>
-                    </div>
-                    <input type="hidden" name="insertar_descarga" >
+        <div id="app">
+            <!-- <div class="pegajoso"> -->
+            <div role="toolbar" id="toolbar" class="text-center">
+
+                <div>
+                    <form name="pdf-form" id="down-load" method="post">
+                        <button type="submit" id="descarga" class="descarga" title="Descarga">Download</button>
+                        <input type="hidden" name="insertar_descarga">
+                    </form>
+                </div>
+                 
+                <div id="btn-pdf">
+                    <button id="ver-pdf" title="Ver">Visor PDF</button>
+                </div>
+
+                <div id="pager">
+                    <button data-pager="prev">prev</button>
+                    <button data-pager="next">next</button>
 
                 </div>
-                <!-- </div> -->
-
-
-
-
-                <div id="viewport-container">
-                    <div role="main" id="viewport"></div>
+                <div><label id="numero_pagina"></label> / <label id="total_paginas"></label></div>
+                <div id="page-mode">
+                    <label>Page Mode <input type="number" value="1" min="1" /></label>
                 </div>
+
+
             </div>
+            <!-- </div> -->
 
+
+
+
+            <div id="viewport-container">
+                <div role="main" id="viewport"></div>
+            </div>
         </div>
 
+    </div>
 
-    </form>
+
+
 
 
     <script src="https://unpkg.com/pdfjs-dist@2.0.489/build/pdf.min.js"></script>
