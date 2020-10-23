@@ -3,6 +3,7 @@
 
 session_start();
 $id_usuario = $_SESSION['id_usuario'];
+$fecha_sesion = $_SESSION['fecha_sesion'];
 $var_doc = "";
 $var_temp1 = "";
 $var_temp2 = "";
@@ -27,12 +28,32 @@ include_once 'includes/funciones/bd_conexion.php';
 }*/
 include_once 'includes/templates/header.php';
 
-$contador = $contador + 0;
-$contador++;
+
+//SELECT COUNT(*) as resultado FROM descargas WHERE Cast(fecha_descarga AS date) = '2020-10-23' AND id_descarga_usuario = '21'
 
 if (isset($_POST['insertar_descarga'])) { // si se da submit al botón descargas para insertar en la tabla descargas
 
+
     try {
+        $sql = "SELECT COUNT(*) as cuenta FROM descargas WHERE Cast(fecha_descarga AS date) = '2020-10-22' AND id_descarga_usuario = '2'";
+        $resultado = $conn->query($sql);
+        $filas  = $resultado->num_rows;
+        $partitura = $resultado->fetch_assoc();
+        echo $partitura['cuenta'];
+        $num_descargas = $partitura['cuenta'];
+
+        $resultado->close();
+        $conn->close();
+        
+    } catch (Exception $e) {
+        echo "Error" . $e->getLine() . "<br>";
+        $error = $e->getMessage();
+        echo $error;
+    }
+    
+
+
+    /*try {
         //aqui en insert fue tambien necesario agregar el campo editado
         $stmt = $conn->prepare("INSERT INTO descargas (id_descarga_partitura, id_descarga_usuario, fecha_descarga) VALUES (?, ?, NOW())");
         $stmt->bind_param("ii", $id_partitura, $id_usuario);
@@ -40,16 +61,19 @@ if (isset($_POST['insertar_descarga'])) { // si se da submit al botón descargas
         //print_r($stmt);
         $id_registro = $stmt->insert_id;
         echo $id_registro;
+
+
+
         $stmt->close();
         $conn->close();
     } catch (Exception $e) {
         echo "Error" . $e->getLine() . "<br>";
         echo "Error" . $e->getMessage();
-    }
+    }*/
    
 }
 
-echo "Contador" . $contador;
+
 
 ?>
 

@@ -28,6 +28,9 @@ if (isset($_POST['login-usuario'])) {
                 if (password_verify($password, $password_usuario)) {
                     session_start(); //Para abrir una sesión
                     $_SESSION['nombre_usuario'] = $usuario;
+                    
+                    date_default_timezone_set("America/Mexico_City");
+                    $_SESSION['fecha_sesion'] = date('Y-m-d');
 
                     $_SESSION['password_usuario'] = $password_usuario;
                    
