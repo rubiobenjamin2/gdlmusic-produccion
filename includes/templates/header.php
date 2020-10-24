@@ -69,7 +69,7 @@ session_start();
     <link rel="stylesheet" href="admin/css/skins/_all-skins.min.css">
     <!-- iCheck for checkboxes and radio inputs -->
     <link rel="stylesheet" href="admin/css/icheck.css">
-    <link rel="stylesheet" href="admin/css/sweetalert2.min.css">
+    <!-- <link rel="stylesheet" href="admin/css/sweetalert2.min.css"> -->
     <!-- Morris charts -->
     <link rel="stylesheet" href="admin/css/morris.css">
 
@@ -162,6 +162,7 @@ session_start();
         });
     </script> <!-- Script Fecha -->
 
+    <script src="js/sweetalert2.all.min.js" charset="UTF-8"></script>
 
 
 </head>

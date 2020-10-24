@@ -119,8 +119,8 @@
     }
 
     // descarga PDF
-    document.getElementById('descarga')
-        .addEventListener('click', (e) => {
+  /* document.getElementById('descarga')
+        .addEventListener('click', (e) => {*/
             //console.log('hola');
             //var ancla = document.getElementById("milink");
             //ancla.href='pdf/Consulta de Adeudo Predial __ Municipio de Zapopan Jalisco.pdf' ;
@@ -128,17 +128,17 @@
             //window.location.href='<a href="pdf/Consulta de Adeudo Predial __ Municipio de Zapopan Jalisco.pdf" id="milink" download></a>');
             //var ancla = document.getElementById('milink');
             //document.getElementById("my_pdf_viewer").innerHTML = ancla.href;
-            var ruta = document.querySelector("#nombre_partitura").value;
+           var ruta = document.querySelector("#nombre_partitura").value;
             console.log("ruta:" + ruta);
             
 
             var link = document.createElement("a");
             link.setAttribute("href", "pdf/" + ruta);
-            link.setAttribute("download", "");
-            link.setAttribute("id", "milink"); 
+            //link.setAttribute("download", "");
+            //link.setAttribute("id", "milink"); 
             //generamos el click al link dentro de la funcion 
             
-            link.click();
+            //link.click();
 
 
             //document.getElementById('download').append(link);
@@ -150,7 +150,7 @@
             var var1 = ancla.getAttribute("href");*/
 
             //console.log(var1);
-        }); 
+       // }); 
 
     // Visor PDF
     document.getElementById('ver-pdf')

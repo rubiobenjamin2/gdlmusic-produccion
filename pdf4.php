@@ -3,7 +3,7 @@
 
 session_start();
 $id_usuario = $_SESSION['id_usuario'];
-$fecha_sesion = $_SESSION['fecha_sesion'];
+//$fecha_sesion = $_SESSION['fecha_sesion'];
 $var_doc = "";
 $var_temp1 = "";
 $var_temp2 = "";
@@ -31,47 +31,58 @@ include_once 'includes/templates/header.php';
 
 //SELECT COUNT(*) as resultado FROM descargas WHERE Cast(fecha_descarga AS date) = '2020-10-23' AND id_descarga_usuario = '21'
 
-if (isset($_POST['insertar_descarga'])) { // si se da submit al botón descargas para insertar en la tabla descargas
+/*if (isset($_POST['insertar_descarga'])) { // si se da submit al botón descargas para insertar en la tabla descargas
 
-
+    // Recuperamos el número de descargas de usuario por sesión
+    //Hacemos un cast a date  a la fecha para eliminar las horas minutos y segundos
     try {
-        $sql = "SELECT COUNT(*) as cuenta FROM descargas WHERE Cast(fecha_descarga AS date) = '2020-10-22' AND id_descarga_usuario = '2'";
+        $sql = "SELECT COUNT(*) as cuenta FROM descargas WHERE Cast(fecha_descarga AS date) = '2020-10-22' AND id_descarga_usuario = '1'";
         $resultado = $conn->query($sql);
-        $filas  = $resultado->num_rows;
+        //$filas  = $resultado->num_rows;
         $partitura = $resultado->fetch_assoc();
         echo $partitura['cuenta'];
         $num_descargas = $partitura['cuenta'];
 
         $resultado->close();
         $conn->close();
-        
     } catch (Exception $e) {
         echo "Error" . $e->getLine() . "<br>";
         $error = $e->getMessage();
         echo $error;
-    }
-    
+    }*/
 
 
-    /*try {
+//Insertamos en tabla descargas id de partituras y usuarios para tener un control de descargas
+/*try {
         //aqui en insert fue tambien necesario agregar el campo editado
         $stmt = $conn->prepare("INSERT INTO descargas (id_descarga_partitura, id_descarga_usuario, fecha_descarga) VALUES (?, ?, NOW())");
         $stmt->bind_param("ii", $id_partitura, $id_usuario);
         $stmt->execute();
         //print_r($stmt);
         $id_registro = $stmt->insert_id;
-        echo $id_registro;
+        //echo $id_registro;
+        if($id_registro > 0) {
+        
+        $respuesta = array(
+            'respuesta' => 'exito',
+            'id_admin' => $id_registro   
+        );
+        //die(json_encode($respuesta));
+    } else {
+        $respuesta = array(
+            'respuesta' => 'error'   
+        );
 
-
+    }
 
         $stmt->close();
         $conn->close();
     } catch (Exception $e) {
         echo "Error" . $e->getLine() . "<br>";
         echo "Error" . $e->getMessage();
-    }*/
-   
-}
+    }
+    die(json_encode($respuesta));*/
+//}
 
 
 
@@ -82,7 +93,7 @@ if (isset($_POST['insertar_descarga'])) { // si se da submit al botón descargas
 
 <section class="seccion contenedor">
     <h2><?php echo  $var_temp2 ?> - <?php echo  $var_artista ?></h2>
-   
+
     <!-- Implement a Simple PDF Viewer with PDF.js -->
 
 
@@ -93,12 +104,13 @@ if (isset($_POST['insertar_descarga'])) { // si se da submit al botón descargas
             <div role="toolbar" id="toolbar" class="text-center">
 
                 <div>
-                    <form name="pdf-form" id="down-load" method="post">
-                        <button type="submit" id="descarga" class="descarga" title="Descarga">Download</button>
+                    <form name="pdf-form" id="down-load" method="post" action="modelo-descargas.php">
+                        <button type="submit" name="down-load" id="sweet" class="descarga" title="Descarga">Download</button>
                         <input type="hidden" name="insertar_descarga">
+                        <input type="hidden" name="id-partitura" value="<?php echo $id_partitura ?>">
                     </form>
                 </div>
-                 
+
                 <div id="btn-pdf">
                     <button id="ver-pdf" title="Ver">Visor PDF</button>
                 </div>
@@ -129,9 +141,12 @@ if (isset($_POST['insertar_descarga'])) { // si se da submit al botón descargas
 
 
 
+    <script type="text/javascript" src="js/usuario-ajax.js">
+    </script>
 
 
-    <script src="https://unpkg.com/pdfjs-dist@2.0.489/build/pdf.min.js"></script>
+    <script src="https://unpkg.com/pdfjs-dist@2.0.489/build/pdf.min.js">
+    </script>
     <script src="js/prueba4.js"></script>
     <script>
         initPDFViewer("pdf/" + "<?php echo $var_doc ?>"); //pasamos la variable de php a javascript
