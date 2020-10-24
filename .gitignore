@@ -13,7 +13,10 @@ fonts/
 pdf/
 includes/paypal/
 includes/paypal.php
+includes/funciones/bd_conexion.php
 
 
 # Archivos
-*.txt       
+*.txt 
+pagar.php
+pago_finalizado.php      
