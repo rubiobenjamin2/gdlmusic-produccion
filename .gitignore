@@ -20,5 +20,5 @@ includes/funciones/bd_conexion.php
 *.txt 
 
 ## SOURCE CODE
-pagar.php            text eol=crlf
-pago_finalizado.php  text    
+pagar.php            
+pago_finalizado.php      
