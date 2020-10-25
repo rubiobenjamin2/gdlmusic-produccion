@@ -1,6 +1,6 @@
 $(document).ready(function () {
    
-    $('#guardar-registro').on('submit', function (e) {
+    $('#download-form').on('submit', function (e) {
         e.preventDefault();//evita que se abra el archivo del action( osea el insertar-admin.php ahora modelo-admin) del form que esta en crear-admin.php
         //console.log('Click');
 
@@ -17,16 +17,23 @@ $(document).ready(function () {
                 console.log(data);
                 var resultado = data;
                 if (resultado.respuesta == 'exito') {
-                    Swal.fire(
-                        'Correcto',
-                        'Se guardó correctamente',
-                        'success'
-                    )
-                } if (resultado.respuesta == 'error') {
+                    
+                    var ruta = document.querySelector("#nombre_partitura").value;
+                    console.log("ruta:" + ruta);
+                    var link = document.createElement("a");
+                    link.setAttribute("href", "pdf/" + ruta);
+                    link.setAttribute("download", "");
+                    link.click();
+
                     Swal.fire({
-                        type: 'error',
-                        title: 'Oops...',
-                        text: 'Hubo un error!'
+                        title: '... descargando PDF',
+                        confirmButtonColor: '#fe4918'
+                    })
+                } if (resultado.respuesta == 'exceso') {
+                    Swal.fire({
+                       // type: 'error',
+                        title: '¡ Llegaste al límite de descargas por día !',
+                        confirmButtonColor: '#fe4918'
 
                     })
 

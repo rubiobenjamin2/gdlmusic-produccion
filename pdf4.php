@@ -104,8 +104,8 @@ include_once 'includes/templates/header.php';
             <div role="toolbar" id="toolbar" class="text-center">
 
                 <div>
-                    <form name="pdf-form" id="down-load" method="post" action="modelo-descargas.php">
-                        <button type="submit" name="down-load" id="sweet" class="descarga" title="Descarga">Download</button>
+                    <form  id="download-form" method="post" action="modelo-descargas.php">
+                        <button type="submit" name="down-load" id="descarga-pdf" class="descarga" title="Descarga">Download</button>
                         <input type="hidden" name="insertar_descarga">
                         <input type="hidden" name="id-partitura" value="<?php echo $id_partitura ?>">
                     </form>

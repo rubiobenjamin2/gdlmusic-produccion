@@ -9,14 +9,21 @@ include_once 'includes/funciones/bd_conexion.php';
 } else {
     echo "No conectado";
 }*/
+
+//////En el modelo no dejar ni un echo solo en el catch porque nos marca error///////////7
+
 session_start();
 $id_usuario = $_SESSION['id_usuario'];
+$id_partitura = $_POST['id-partitura'];
+
 
 /*echo "<pre>";
 echo var_dump($_POST) . "<br>";
 echo $id_usuario;
 
 echo "</pre>";*/
+
+
 
 
 
@@ -29,32 +36,27 @@ if(isset($_POST['insertar_descarga'])) { //agregar-admin es el input de tipo hid
     // Recuperamos el número de descargas de usuario por sesión
     //Hacemos un cast a date  a la fecha para eliminar las horas minutos y segundos
     try {
-        $sql = "SELECT COUNT(*) as cuenta FROM descargas WHERE Cast(fecha_descarga AS date) = '2020-10-21' AND id_descarga_usuario = '1'";
+        $sql = "SELECT COUNT(*) as cuenta FROM descargas WHERE Cast(fecha_descarga AS date) = CURRENT_DATE AND id_descarga_usuario = $id_usuario";
         $resultado = $conn->query($sql);
         //$filas  = $resultado->num_rows;
         $partitura = $resultado->fetch_assoc();
         //echo $partitura['cuenta'];
         $num_descargas = $partitura['cuenta'];
-
         $resultado->close();
-        $conn->close();
-    } catch (Exception $e) {
-        echo "Error" . $e->getLine() . "<br>";
-        $error = $e->getMessage();
-        echo $error;
-    }
-   
 
-  if($num_descargas <= 3) {
-      //echo "si descargalo" . $num_descargas;
-        $respuesta = array(
-            'respuesta' => 'exito'
+        // $num_descargas inicia desde 0 !!ojo
+        if ($num_descargas < 3) { //límite de descargas por día. 
+           // echo "si descargalo" . $num_descargas; //marca error si lo descomentamos para comprobar. No manda los mensaje sweetalert
+            $respuesta = array(
+                'respuesta' => 'exito'
 
-        );
-                //die(json_encode($respuesta));
+            );
+            //die(json_encode($respuesta));
 
-       /* try {
-            //aqui en insert fue tambien necesario agregar el campo editado
+            try {
+
+
+//Insertamos en tabla descargas id de partituras y usuarios para tener un control de descargas
             $stmt = $conn->prepare("INSERT INTO descargas (id_descarga_partitura, id_descarga_usuario, fecha_descarga) VALUES (?, ?, NOW())");
             $stmt->bind_param("ii", $id_partitura, $id_usuario);
             $stmt->execute();
@@ -63,7 +65,8 @@ if(isset($_POST['insertar_descarga'])) { //agregar-admin es el input de tipo hid
             if ($id_registro > 0) {
 
                 $respuesta = array(
-                    'respuesta' => 'exito'
+                    'respuesta' => 'exito',
+                    'id' => $id_registro
                     
                 );
                 //die(json_encode($respuesta));
@@ -72,29 +75,31 @@ if(isset($_POST['insertar_descarga'])) { //agregar-admin es el input de tipo hid
                     'respuesta' => 'error'
                 );
             }
-            $stmt->close();
-            $conn->close();
-        } catch (Exception $e) {
+
+              } catch (Exception $e) {
             echo "Error" . $e->getLine() . "<br>";
             echo "Error" . $e->getMessage();
         }
-        die(json_encode($respuesta));*/
-
-
-
-  } else {
-         //echo "no puedes descargarlo" . $num_descargas;
-       $respuesta = array(
-            'respuesta' => 'exceso'
-       );
+            //die(json_encode($respuesta));
+        } else {
+            //echo "no puedes descargarlo" . $num_descargas;
+            $respuesta = array(
+                'respuesta' => 'exceso'
+            );
+            //die(json_encode($respuesta));
+        }
+           // $stmt->close();
+              $conn->close(); // la variable $conn se cierra hasta el final del código y por esto me marcaba error
+         
+    } catch (Exception $e) {
+        echo "Error" . $e->getLine() . "<br>";
+        $error = $e->getMessage();
         
-       
-
-}
-
+    }
+    
     die(json_encode($respuesta));
     
-
+ 
 }
 
 
