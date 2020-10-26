@@ -146,33 +146,7 @@ include_once 'includes/templates/header.php';
         initPDFViewer("pdf/" + "<?php echo $var_doc ?>"); //pasamos la variable de php a javascript
     </script>
 
-    <script type="text/javascript">
-        // Visor PDF
-        document.getElementById('ver-pdf-2')
-            .addEventListener('click', (e) => {
-                var ruta2 = document.querySelector("#nombre_partitura_2").value;
-                console.log("ruta:" + ruta2);
-
-                var link2 = document.createElement("a");
-                link2.setAttribute("href", "web/viewer.html?file=../pdf/" + ruta2);
-                //link.setAttribute("download", "");
-                //link.setAttribute("id", "milink");
-                //generamos el click al link dentro de la funcion 
-
-                link2.click();
-
-
-                //document.getElementById('download').append(link);
-
-                //document.getElementById('download').innerHTML='<a href="pdf/Consulta de Adeudo Predial __ Municipio de Zapopan Jalisco.pdf" id="milink" download>Download</a>';
-
-
-                /*var ancla = document.getElementById("milink2");
-                var var1 = ancla.getAttribute("href");*/
-
-                //console.log(var1);
-            });
-    </script>
+    
 
 </section>
 <!--seccion-->
