@@ -37,7 +37,7 @@
                  <!-- <a href="#documentos" class="invitado-info" >  -->
 
                    <!-- Enviamos dos variables en el link -->
-                   <a href="pdf4.php?pdf_url=<?php echo urlencode($artistas['url_pdf'])?>&nom_artista=<?php echo urlencode($artistas['nombre_artista']) ?>"  > 
+                   <a href="pdf5.php?pdf_url=<?php echo urlencode($artistas['url_pdf'])?>&nom_artista=<?php echo urlencode($artistas['nombre_artista']) ?>"  > 
                      <img src="img/artistas/<?php echo $artistas['url_img'] ?>" alt="imagen invitado">
                       <input type="hidden" name="nombre_partitura" id="nombre_partitura" value="<?php echo $artistas['url_pdf'] ?>"> 
                      <p><?php echo $artistas['nombre_artista']; ?></p>

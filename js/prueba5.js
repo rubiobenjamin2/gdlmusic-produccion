@@ -1,5 +1,5 @@
 (function () {
-    
+
     console.log("funciona");
     // crea un enlace y en automático le hacemos click para situarnos en parte deseada de la página. El otro enlace se encuentra en el Header
     var link = document.createElement("a");
@@ -8,8 +8,8 @@
     //link.setAttribute("id", "milink");
     //generamos el click al link dentro de la funcion 
     link.click();
-    
-    
+
+
     let currentPageIndex = 0;
     let pageMode = 1;
     let cursorIndex = Math.floor(currentPageIndex / pageMode);
@@ -28,9 +28,9 @@
             console.log(currentPageIndex + 1); //imprime número de página actual
             $('#numero_pagina').text(currentPageIndex + 1);
             $('#total_paginas').text(totalPagesCount);
-        }); 
+        });
     };
-    
+
     function onPagerButtonsClick(event) {
         const action = event.target.getAttribute("data-pager");
         if (action === "prev") {
@@ -119,57 +119,56 @@
     }
 
     // descarga PDF
-   /*document.getElementById('descarga-pdf')
-        .addEventListener('click', (e) => {*/
-            //console.log('hola');
-            //var ancla = document.getElementById("milink");
-            //ancla.href='pdf/Consulta de Adeudo Predial __ Municipio de Zapopan Jalisco.pdf' ;
-            //$('.milink').href;
-            //window.location.href='<a href="pdf/Consulta de Adeudo Predial __ Municipio de Zapopan Jalisco.pdf" id="milink" download></a>');
-            //var ancla = document.getElementById('milink');
-            //document.getElementById("my_pdf_viewer").innerHTML = ancla.href;
-          
-          
-            /*var ruta = document.querySelector("#nombre_partitura").value;
-            console.log("ruta:" + ruta);
-            
-
-            var link = document.createElement("a");
-            link.setAttribute("href", "pdf/" + ruta);
-            link.setAttribute("download", "");*/
+    /*document.getElementById('descarga-pdf')
+         .addEventListener('click', (e) => {*/
+    //console.log('hola');
+    //var ancla = document.getElementById("milink");
+    //ancla.href='pdf/Consulta de Adeudo Predial __ Municipio de Zapopan Jalisco.pdf' ;
+    //$('.milink').href;
+    //window.location.href='<a href="pdf/Consulta de Adeudo Predial __ Municipio de Zapopan Jalisco.pdf" id="milink" download></a>');
+    //var ancla = document.getElementById('milink');
+    //document.getElementById("my_pdf_viewer").innerHTML = ancla.href;
 
 
-            //link.setAttribute("id", "milink"); 
-            //generamos el click al link dentro de la funcion 
-            //console.log("Archivo descargó");
-           // link.click();
+    /*var ruta = document.querySelector("#nombre_partitura").value;
+    console.log("ruta:" + ruta);
+    
+
+    var link = document.createElement("a");
+    link.setAttribute("href", "pdf/" + ruta);
+    link.setAttribute("download", "");*/
 
 
-            //document.getElementById('download').append(link);
+    //link.setAttribute("id", "milink"); 
+    //generamos el click al link dentro de la funcion 
+    //console.log("Archivo descargó");
+    // link.click();
 
-            //document.getElementById('download').innerHTML='<a href="pdf/Consulta de Adeudo Predial __ Municipio de Zapopan Jalisco.pdf" id="milink" download>Download</a>';
+
+    //document.getElementById('download').append(link);
+
+    //document.getElementById('download').innerHTML='<a href="pdf/Consulta de Adeudo Predial __ Municipio de Zapopan Jalisco.pdf" id="milink" download>Download</a>';
 
 
-            /*var ancla = document.getElementById("milink2");
-            var var1 = ancla.getAttribute("href");*/
+    /*var ancla = document.getElementById("milink2");
+    var var1 = ancla.getAttribute("href");*/
 
-            //console.log(var1);
-      //  }); 
+    //console.log(var1);
+    //  }); 
 
     // Visor PDF
-    document.getElementById('ver-pdf')
+    document.getElementById('ver-pdf-2')
         .addEventListener('click', (e) => {
-            var ruta = document.querySelector("#nombre_partitura").value;
-            console.log("ruta:" + ruta);
-            
-            var link = document.createElement("a");
-            link.setAttribute("href", "web/viewer.html?file=../pdf/" + ruta);
-            
+            var ruta2 = document.querySelector("#nombre_partitura_2").value;
+            console.log("ruta:" + ruta2);
+
+            var link2 = document.createElement("a");
+            link2.setAttribute("href", "web/viewer.html?file=../pdf/" + ruta2);
             //link.setAttribute("download", "");
             //link.setAttribute("id", "milink");
             //generamos el click al link dentro de la funcion 
 
-            link.click();
+            link2.click();
 
 
             //document.getElementById('download').append(link);
@@ -181,10 +180,10 @@
             var var1 = ancla.getAttribute("href");*/
 
             //console.log(var1);
-        }); 
-
-    
+        });
 
 
-    
+
+
+
 })();

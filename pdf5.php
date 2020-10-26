@@ -1,9 +1,8 @@
 <?php
 
 
-session_start();
-$id_usuario = $_SESSION['id_usuario'];
-//$fecha_sesion = $_SESSION['fecha_sesion'];
+
+
 $var_doc = "";
 $var_temp1 = "";
 $var_temp2 = "";
@@ -14,10 +13,6 @@ $var_temp2 = str_replace("_gm", "", $var_temp1);
 $var_artista = $_GET['nom_artista'];
 $id_partitura = $_GET['id_partitura'];
 
-echo "<pre>";
-var_dump($_GET);
-echo "El usuario es: " . $id_usuario;
-echo "</pre>";
 
 //include_once 'includes/funciones/bd_conexion.php';
 //para comprobar que se ha conectado a la base de datos
@@ -89,7 +84,7 @@ include_once 'includes/templates/header.php';
 ?>
 
 <!-- Este input es utilizado para capturar su valor y realizar la descarga del pdf (prueba4.js)-->
-<input type="hidden" name="nombre_partitura" id="nombre_partitura" value="<?php echo $var_doc ?>">
+<input type="hidden" name="nombre_partitura_2" id="nombre_partitura_2" value="<?php echo $var_doc ?>">
 
 <section class="seccion contenedor">
     <h2><?php echo  $var_temp2 ?> - <?php echo  $var_artista ?></h2>
@@ -104,15 +99,14 @@ include_once 'includes/templates/header.php';
             <div role="toolbar" id="toolbar" class="text-center">
 
                 <div>
-                    <form  id="download-form" method="post" action="modelo-descargas.php">
+                    <form id="download-form2" method="post" action="modelo-descargas-2.php">
                         <button type="submit" name="down-load" id="descarga-pdf" class="descarga" title="Descarga">Download</button>
-                        <input type="hidden" name="insertar_descarga">
-                        <input type="hidden" name="id-partitura" value="<?php echo $id_partitura ?>">
+                        <input type="hidden" name="descarga-pdf5">
                     </form>
                 </div>
 
-                <div id="btn-pdf">
-                    <button id="ver-pdf" title="Ver">Visor PDF</button>
+                <div id="btn-pdf2">
+                    <button id="ver-pdf-2" title="Ver">Visor PDF</button>
                 </div>
 
                 <div id="pager">
@@ -147,9 +141,37 @@ include_once 'includes/templates/header.php';
 
     <script src="https://unpkg.com/pdfjs-dist@2.0.489/build/pdf.min.js">
     </script>
-    <script src="js/prueba4.js"></script>
+    <script src="js/prueba5.js"></script>
     <script>
         initPDFViewer("pdf/" + "<?php echo $var_doc ?>"); //pasamos la variable de php a javascript
+    </script>
+
+    <script type="text/javascript">
+        // Visor PDF
+        document.getElementById('ver-pdf-2')
+            .addEventListener('click', (e) => {
+                var ruta2 = document.querySelector("#nombre_partitura_2").value;
+                console.log("ruta:" + ruta2);
+
+                var link2 = document.createElement("a");
+                link2.setAttribute("href", "web/viewer.html?file=../pdf/" + ruta2);
+                //link.setAttribute("download", "");
+                //link.setAttribute("id", "milink");
+                //generamos el click al link dentro de la funcion 
+
+                link2.click();
+
+
+                //document.getElementById('download').append(link);
+
+                //document.getElementById('download').innerHTML='<a href="pdf/Consulta de Adeudo Predial __ Municipio de Zapopan Jalisco.pdf" id="milink" download>Download</a>';
+
+
+                /*var ancla = document.getElementById("milink2");
+                var var1 = ancla.getAttribute("href");*/
+
+                //console.log(var1);
+            });
     </script>
 
 </section>
