@@ -1,4 +1,6 @@
 <?php
+
+/* Este modelo es para los que no están registrados */
 if(isset($_POST['descarga-pdf5'])) {
 
     /*echo "<pre>";

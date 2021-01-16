@@ -10,6 +10,8 @@ include_once 'includes/funciones/bd_conexion.php';
     echo "No conectado";
 }*/
 
+/* Este modelo es para los que están registrados e iniciarion sesión */
+
 //////En el modelo no dejar ni un echo solo en el catch porque nos marca error///////////7
 
 session_start();
