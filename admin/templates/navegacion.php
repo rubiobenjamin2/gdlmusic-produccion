@@ -45,6 +45,18 @@
 
         <li class="treeview">
           <a href="#">
+            <i class="fas fa-music"></i>
+            &nbsp;&nbsp;<span>Partituras</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="lista-partituras.php"><i class="fas fa-list-ul" aria-hidden="true"></i> &nbsp;<span>Ver Todos</span> </a></li>
+            <li><a href="crear-partitura.php"><i class="fas fa-plus-circle" aria-hidden="true"></i> &nbsp;<span>Agregar</span></a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
             <i class="fas fa-calendar-alt"></i>
             &nbsp;&nbsp;<span>Eventos</span>
             <span class="pull-right-container"></span>
@@ -83,7 +95,7 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fas fa-user-circle"></i>
+            <i class="fas fa-guitar"></i>
             &nbsp;&nbsp;<span>Artistas</span>
             <i class="fa fa-angle-left pull-right"></i>
           </a>
