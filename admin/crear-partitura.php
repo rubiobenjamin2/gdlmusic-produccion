@@ -40,13 +40,22 @@ include_once 'templates/navegacion.php';
                         <!-- en este form cambiamos el id y se agrego enctype este ultimo se usa cada vez que se quiere subir una archivo o imagen -->
                         <form enctype="multipart/form-data" role="form" name="guardar-registro" id="guardar-registro-archivo" method="post" action="modelo-artista.php">
                             <div class="box-body">
+
                                 <div class="form-group">
-                                    <label for="nombre_invitado">Nombre del Artista:</label>
-                                    <input type="text" class="form-control" id="nombre_artista" name="nombre_artista" placeholder="Nombre Artista">
+                                    <label for="imagen_invitado">Partitura:</label>
+                                    <input type="file" id="nombre_partitura" name="archivo_partitura">
+
+                                    <p class="help-block">Añada _gm al final del nombre de la partitura.</p>
                                 </div>
+
                                 <div class="form-group">
-                                    <label for="apellido_invitado">PDF:</label>
-                                    <input type="text" class="form-control" id="url_pdf" name="url_pdf" placeholder="Url_PDF">
+                                    <label for="nombre_invitado">Artista:</label>
+                                    <input type="text" class="form-control" id="id_artista" name="artista" placeholder="Nombre Artista">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="apellido_invitado">Album:</label>
+                                    <input type="text" class="form-control" id="id_album" name="album" placeholder="Album">
                                 </div>
 
 
