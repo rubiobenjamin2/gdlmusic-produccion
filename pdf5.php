@@ -141,12 +141,13 @@ include_once 'includes/templates/header.php';
 
     <script src="https://unpkg.com/pdfjs-dist@2.0.489/build/pdf.min.js">
     </script>
+    <script src="js/salto-barra.js"></script>
     <script src="js/prueba5.js"></script>
     <script>
         initPDFViewer("pdf/" + "<?php echo $var_doc ?>"); //pasamos la variable de php a javascript
     </script>
 
-    
+
 
 </section>
 <!--seccion-->

@@ -145,7 +145,7 @@ include_once 'includes/templates/header.php'; ?>
 
 
 
-
+<script src="js/salto-barra.js"></script>
 
 
 <?php include_once 'includes/templates/footer.php'; ?>

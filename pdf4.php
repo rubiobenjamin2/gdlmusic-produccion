@@ -104,7 +104,7 @@ include_once 'includes/templates/header.php';
             <div role="toolbar" id="toolbar" class="text-center">
 
                 <div>
-                    <form  id="download-form" method="post" action="modelo-descargas.php">
+                    <form id="download-form" method="post" action="modelo-descargas.php">
                         <button type="submit" name="down-load" id="descarga-pdf" class="descarga" title="Descarga">Download</button>
                         <input type="hidden" name="insertar_descarga">
                         <input type="hidden" name="id-partitura" value="<?php echo $id_partitura ?>">
@@ -147,6 +147,7 @@ include_once 'includes/templates/header.php';
 
     <script src="https://unpkg.com/pdfjs-dist@2.0.489/build/pdf.min.js">
     </script>
+    <script src="js/salto-barra.js"></script>
     <script src="js/prueba4.js"></script>
     <script>
         initPDFViewer("pdf/" + "<?php echo $var_doc ?>"); //pasamos la variable de php a javascript
