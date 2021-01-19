@@ -14,10 +14,10 @@ $var_temp2 = str_replace("_gm", "", $var_temp1);
 $var_artista = $_GET['nom_artista'];
 $id_partitura = $_GET['id_partitura'];
 
-echo "<pre>";
+/*echo "<pre>";
 var_dump($_GET);
 echo "El usuario es: " . $id_usuario;
-echo "</pre>";
+echo "</pre>";*/
 
 //include_once 'includes/funciones/bd_conexion.php';
 //para comprobar que se ha conectado a la base de datos

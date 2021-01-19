@@ -121,7 +121,7 @@
           <a href="#">
             <i class="fas fa-user-circle"></i>
             &nbsp;&nbsp;<span>Invitados</span>
-
+            <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
             <li><a href="lista-invitados.php"><i class="fas fa-list-ul" aria-hidden="true"></i> &nbsp;<span>Ver Todos</span> </a></li>
@@ -133,7 +133,7 @@
           <a href="#">
             <i class="fas fa-address-card"></i>
             &nbsp;&nbsp;<span>Registrados</span>
-
+            <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
             <li><a href="lista-registrados.php"><i class="fas fa-list-ul" aria-hidden="true"></i> &nbsp;<span>Ver Todos</span> </a></li>

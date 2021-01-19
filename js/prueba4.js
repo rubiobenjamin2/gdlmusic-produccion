@@ -4,9 +4,11 @@
     // crea un enlace y en automático le hacemos click para situarnos en parte deseada de la página. El otro enlace se encuentra en el Header
     var link = document.createElement("a");
     link.setAttribute("href", "#enlace");
+    
     //link.setAttribute("download", "");
     //link.setAttribute("id", "milink");
     //generamos el click al link dentro de la funcion 
+    
     link.click();
     
     

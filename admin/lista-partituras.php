@@ -44,7 +44,8 @@ include_once 'templates/navegacion.php';
                             <tbody>
                                 <?php
                                 try {
-                                    $sql = "SELECT * FROM partituras";
+                                    $sql = "SELECT partituras.*, estilo.nombre_estilo FROM partituras ";
+                                    $sql .= " JOIN estilo ON estilo.id_estilo = partituras.id_estilo";
                                     $resultado = $conn->query($sql);
                                     $filas  = $resultado->num_rows;
                                 } catch (Exception $e) {
@@ -63,7 +64,7 @@ include_once 'templates/navegacion.php';
                                         <td><?php echo $partitura['nombre_partitura']; ?></td>
                                         <td><?php echo $partitura['nombre_artista']; ?> </td>
                                         <td> <?php echo $partitura['album']; ?> </td>
-                                        <td> <?php echo $partitura['id_estilo']; ?> </td>
+                                        <td> <?php echo $partitura['nombre_estilo']; ?> </td>
                                         <td> <?php echo $partitura['fecha_carga']; ?> </td>
                                         <td> <?php echo $partitura['no_descargas']; ?> </td>
 

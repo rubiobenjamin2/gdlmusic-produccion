@@ -37,7 +37,8 @@ $(document).ready(function () {
 
                     })
 
-                }
+                } 
+
             }
 
         })

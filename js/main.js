@@ -70,9 +70,7 @@ $(function(){
     //Menu Fijo
     var windowHeight = $(window).height();//Nos regresa la altura total de la ventana
     var barraAltura = $('.barra').innerHeight(); // nos da la altura de la barra
-    //var toolbarAltura = $('.pegajoso').innerHeight();
-    //var altu = barraAltura;
-    //var altubody = barraAltura;
+   
     //console.log(windowHeight)
    $(window).scroll(function(){
        var scroll= $(window).scrollTop(); //es importante añadir esta linea. scrollTop detecta en que parte de la pantalla estamos
@@ -80,7 +78,7 @@ $(function(){
        if(scroll > windowHeight){
             //barra fija
             $('.barra').addClass('fixed');
-           $('body').css({ 'margin-top': barraAltura + 'px' }); 
+           $('body').css({'margin-top': + barraAltura + 'px'}); 
            // $('.pegajoso').addClass('fixed2');
             //$('.fixed2').css({ 'top': altu + 'px' }); 
           // $('body').css({ 'margin-top': altubody + 'px' }); 
@@ -93,7 +91,7 @@ $(function(){
             //remueve la clase fixed creada en barra
              $('.barra').removeClass('fixed');
           // $('.pegajoso').removeClass('fixed2');
-             $('body').css({'margin-top':0+'px'}); 
+             $('body').css({'margin-top': '0px'}); 
            
         }
         

@@ -10,7 +10,7 @@ include_once 'includes/funciones/bd_conexion.php';
     echo "No conectado";
 }*/
 
-/* Este modelo es para los que están registrados e iniciarion sesión */
+/* Este modelo es para los que están registrados e iniciaron sesión */
 
 //////En el modelo no dejar ni un echo solo en el catch porque nos marca error///////////7
 
@@ -64,7 +64,27 @@ if(isset($_POST['insertar_descarga'])) { //agregar-admin es el input de tipo hid
             $stmt->execute();
             //print_r($stmt);
             $id_registro = $stmt->insert_id;
-            if ($id_registro > 0) {
+
+                //Insertamos el no_descargas en la tabla de partituras
+                //Obtenemos el no_descargas y le vamos sumando 1
+               $sql2 = "SELECT no_descargas FROM partituras WHERE id_partitura = $id_partitura";
+                $resultado2 = $conn->query($sql2);
+                //$filas  = $resultado->num_rows;
+                $partitura2 = $resultado2->fetch_assoc();
+                //echo $partitura['cuenta'];
+                $numero_descargas = ($partitura2['no_descargas'] + 1); 
+
+                $stmt2 = $conn->prepare('UPDATE partituras SET no_descargas = ?, editado = NOW() WHERE id_partitura = ?');
+                $stmt2->bind_param("ii", $numero_descargas, $id_partitura);
+                $stmt2->execute();
+                //print_r($stmt);
+                //$id_registro2 = $stmt2->insert_id;
+
+                //$resultado->close();
+                //$resultado2->close();
+
+               
+            if ($id_registro > 0 && !empty($stmt2->affected_rows)) {
 
                 $respuesta = array(
                     'respuesta' => 'exito',
@@ -77,6 +97,7 @@ if(isset($_POST['insertar_descarga'])) { //agregar-admin es el input de tipo hid
                     'respuesta' => 'error'
                 );
             }
+         
 
               } catch (Exception $e) {
             echo "Error" . $e->getLine() . "<br>";
