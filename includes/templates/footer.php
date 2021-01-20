@@ -9,8 +9,8 @@
             <h3>facebook<span> Videos</span></h3>
             <!-- integrar videos de facebook -->
             <!-- <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v7.0"></script>
-<div class="fb-video" data-href="https://www.facebook.com/455351521595256/videos/575449136255625/" data-show-text="false" data-width=""><blockquote cite="https://developers.facebook.com/455351521595256/videos/575449136255625/" class="fb-xfbml-parse-ignore"><a href="https://developers.facebook.com/455351521595256/videos/575449136255625/">Concierto de Osmany Paredes en en Cauz / transmisión en vivo Red Estudio</a><p>Concierto de Osmany Paredes en en Cauz / transmisión en vivo Red Estudio</p>Publicado por <a href="https://www.facebook.com/Red-Estudio-455351521595256/">Red Estudio</a> en Jueves, 27 de diciembre de 2018</blockquote></div> -->
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v7.0"></script>
+            <div class="fb-video" data-href="https://www.facebook.com/455351521595256/videos/575449136255625/" data-show-text="false" data-width=""><blockquote cite="https://developers.facebook.com/455351521595256/videos/575449136255625/" class="fb-xfbml-parse-ignore"><a href="https://developers.facebook.com/455351521595256/videos/575449136255625/">Concierto de Osmany Paredes en en Cauz / transmisión en vivo Red Estudio</a><p>Concierto de Osmany Paredes en en Cauz / transmisión en vivo Red Estudio</p>Publicado por <a href="https://www.facebook.com/Red-Estudio-455351521595256/">Red Estudio</a> en Jueves, 27 de diciembre de 2018</blockquote></div> -->
 
             <ul>
                 <li> Integer ultricies justo nec ipsum finibus, eu interdum quam vulputate. #Pellentesque nec @justo non est eleifend pulvinar.</li>
@@ -30,6 +30,13 @@
             </nav>
             <p>Ing. Benjamin Rubio Madrid</p>
         </div>
+
+        <div class="contacto">
+            <a href="contacto.php">
+                Contáctenos
+            </a>
+        </div>
+
     </div>
     <!--contenedor clearfix-->
     <p class="copyright">

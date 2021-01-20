@@ -44,7 +44,6 @@ session_start();
     <!-- Estilos ADMIN -->
 
     <!-- Bootstrap 3.3.7 -->
-
     <link rel="stylesheet" href="admin/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <!-- <link rel="stylesheet" href="admin/css/font-awesome.min.css"> -->
@@ -236,9 +235,17 @@ session_start();
             </div>
             <nav class="navegacion-principal clearfix">
                 <a href="index.php">Inicio</a>
-                <a href="descargas.php">Descargas</a>
+                <a href="descargas.php">Partituras</a>
                 <a href="calendario.php">Estadísticas</a>
-                <a href="artistas.php">Comentarios</a>
+
+                <?php if (!$_SESSION['nombre_usuario']) { ?>
+                    <a href="artistas.php">Contáctenos</a>
+                <?php } else { ?>
+
+                    <a href="artistas.php">Mis descargas</a>
+
+                <?php } ?>
+
                 <?php if (!$_SESSION['nombre_usuario']) { ?>
                     <a href="admin/login-usuario.php">Inicio de sesión</a>
                 <?php } else { ?>

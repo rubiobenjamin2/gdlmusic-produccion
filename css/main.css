@@ -1008,6 +1008,90 @@ p.copyright{
     margin: 20px 0 0 0;
 }
 
+div.contacto {
+    
+    width: 100%;
+    margin-top: 94px;
+}
+div.contacto a{
+    font-family: 'Oswald', sans-serif;
+    color: #ffffff;
+    font-family: 'Oswald',sans-serif;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all .6s ease;
+    width: 33%;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 2px solid #fe4918;
+    
+}
+div.contacto a:hover{
+    background-color: #fe4918;
+     
+}
+/*nav.navegacion-principal a:last-child{
+    border: 2px solid #fe4918;
+    color: #fe4918;
+}*/
+div.contacto a:hover{
+    color: #ffffff;
+}
+
+@media only screen and (min-width:480px){
+    div.contacto {
+        width: 67%;
+        float: right;
+        text-align: inherit;
+        display: block;
+        margin-top: 35px;
+    }
+    div.contacto a {
+        padding: 10px 10px;
+        display: inline-block;
+        width: auto;
+        text-align: center;
+        margin: 0 10px 0 0;
+    }
+}
+
+@media only screen and (min-width:992px){
+   div.contacto {
+        width: 67%;
+        float: right;
+       /* text-align: right;*/
+        display: block;
+        margin-top: 35px;
+    }
+    div.contacto a {
+        padding: 10px 10px;
+        display: inline-block;
+        width: auto;
+        text-align: center;
+        margin: 0 10px 0 0;
+    }
+}
+
+
+@media only screen and (min-width:768px) {
+    div.contacto {
+        width: 67%;
+        float: right;
+       /* text-align: right;*/
+        display: block;
+        margin-top: 35px;
+    }
+    div.contacto a {
+        padding: 10px 10px;
+        display: inline-block;
+        width: auto;
+        text-align: center;
+        margin: 0 10px 0 0;
+    }
+}
+
 /***INTERNAS***/
 /**Conferencia**/
 .navegacion-principal .activo{
