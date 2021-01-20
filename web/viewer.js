@@ -157,8 +157,8 @@ function getViewerConfiguration() {
       toggleButton: document.getElementById('secondaryToolbarToggle'),
       toolbarButtonContainer: document.getElementById('secondaryToolbarButtonContainer'),
       presentationModeButton: document.getElementById('secondaryPresentationMode'),
-      openFileButton: document.getElementById('secondaryOpenFile'),
-      printButton: document.getElementById('secondaryPrint'),
+      //openFileButton: document.getElementById('secondaryOpenFile'),
+      //printButton: document.getElementById('secondaryPrint'),
       downloadButton: document.getElementById('secondaryDownload'),
       viewBookmarkButton: document.getElementById('secondaryViewBookmark'),
       firstPageButton: document.getElementById('firstPage'),
@@ -1643,7 +1643,7 @@ var PDFViewerApplication = {
     eventBus.on('namedaction', webViewerNamedAction);
     eventBus.on('presentationmodechanged', webViewerPresentationModeChanged);
     eventBus.on('presentationmode', webViewerPresentationMode);
-    eventBus.on('openfile', webViewerOpenFile);
+   // eventBus.on('openfile', webViewerOpenFile);
     eventBus.on('print', webViewerPrint);
     eventBus.on('download', webViewerDownload);
     eventBus.on('firstpage', webViewerFirstPage);

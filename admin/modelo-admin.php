@@ -122,9 +122,9 @@ if($_POST['registro'] == 'actualizar') {
 
 
 
-if($_POST['registro'] == 'eliminar') {
+if($_POST['registro'] == 'eliminar') { //valor del campo registro mandado desde admin-ajax.js)
     //die(json_encode($_POST));
-    $id_borrar = $_POST['id']; //id mandado de ajax
+    $id_borrar = $_POST['id']; //id mandado de ajax(admin-ajax.js)
 
     try {
         $stmt = $conn->prepare('DELETE FROM admins WHERE id_admin = ? ');

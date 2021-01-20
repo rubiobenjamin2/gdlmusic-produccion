@@ -14,6 +14,8 @@ $var_temp2 = str_replace("_gm", "", $var_temp1);
 $var_artista = $_GET['nom_artista'];
 $id_partitura = $_GET['id_partitura'];
 
+//NOTA:  ESTA PENDIENTE LA PARTE DEL VISOR PDF. SI SE QUEDA,  SE CREA UNA CONSULTA A LA BASE DE DATOS PARA SABER EL NO DE DESCARGAS Y ASI EVALUAR SI SE VISUALIZA O NO EL BOTON DE VISOR PDF
+
 /*echo "<pre>";
 var_dump($_GET);
 echo "El usuario es: " . $id_usuario;
@@ -88,7 +90,7 @@ include_once 'includes/templates/header.php';
 
 ?>
 
-<!-- Este input es utilizado para capturar su valor y realizar la descarga del pdf (prueba4.js)-->
+<!-- Este input es utilizado para el visor PDF (prueba4.js)-->
 <input type="hidden" name="nombre_partitura" id="nombre_partitura" value="<?php echo $var_doc ?>">
 
 <section class="seccion contenedor">
