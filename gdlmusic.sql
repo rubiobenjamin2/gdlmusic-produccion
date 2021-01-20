@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 22-10-2020 a las 04:01:42
+-- Tiempo de generación: 20-01-2021 a las 05:12:00
 -- Versión del servidor: 5.7.26
 -- Versión de PHP: 7.4.2
 
@@ -119,7 +119,68 @@ CREATE TABLE `descargas` (
 --
 
 INSERT INTO `descargas` (`id_descargas`, `id_descarga_partitura`, `id_descarga_usuario`, `fecha_descarga`) VALUES
-(2, 1, 1, '2020-10-21 15:51:11');
+(7, 2, 1, '2020-10-22 16:03:31'),
+(8, 3, 1, '2020-10-22 16:04:38'),
+(9, 5, 1, '2020-10-22 18:10:25'),
+(10, 5, 1, '2020-10-22 18:11:24'),
+(11, 5, 1, '2020-10-22 18:14:31'),
+(12, 5, 1, '2020-10-22 18:15:03'),
+(13, 5, 1, '2020-10-22 18:16:05'),
+(14, 5, 1, '2020-10-22 18:22:46'),
+(15, 5, 2, '2020-10-22 20:38:21'),
+(16, 4, 2, '2020-10-22 20:39:16'),
+(17, 4, 2, '2020-10-22 21:49:31'),
+(18, 4, 2, '2020-10-22 21:50:59'),
+(19, 4, 2, '2020-10-22 21:55:23'),
+(20, 4, 2, '2020-10-22 21:59:25'),
+(21, 4, 2, '2020-10-22 22:00:15'),
+(22, 2, 21, '2020-10-23 15:40:32'),
+(23, 3, 21, '2020-10-23 15:41:44'),
+(24, 5, 21, '2020-10-23 20:51:58'),
+(25, 5, 21, '2020-10-23 20:51:58'),
+(26, 3, 1, '2020-10-24 22:22:07'),
+(27, 4, 1, '2020-10-24 22:22:07'),
+(28, 4, 1, '2020-10-24 22:35:54'),
+(29, 5, 1, '2020-10-24 22:38:54'),
+(30, 3, 22, '2020-10-24 22:51:12'),
+(31, 3, 22, '2020-10-24 22:56:51'),
+(32, 3, 22, '2020-10-24 22:58:16'),
+(33, 3, 22, '2020-10-24 22:59:40'),
+(34, 4, 21, '2020-10-24 23:13:15'),
+(35, 1, 21, '2020-10-24 23:14:01'),
+(36, 5, 21, '2020-10-24 23:14:46'),
+(37, 2, 21, '2020-10-24 23:15:44'),
+(38, 1, 2, '2020-10-24 23:58:28'),
+(39, 1, 2, '2020-10-24 23:58:36'),
+(40, 1, 2, '2020-10-24 23:58:46'),
+(41, 1, 2, '2020-10-24 23:59:17'),
+(42, 1, 2, '2020-10-25 00:06:28'),
+(43, 1, 2, '2020-10-25 00:06:32'),
+(46, 1, 1, '2020-10-25 11:25:35'),
+(51, 2, 1, '2020-10-25 13:39:53'),
+(52, 3, 1, '2020-10-25 13:41:24'),
+(54, 2, 2, '2020-10-25 14:30:47'),
+(56, 5, 21, '2020-10-25 14:56:52'),
+(57, 4, 21, '2020-10-25 14:58:34'),
+(58, 3, 21, '2020-10-25 15:01:53'),
+(59, 1, 22, '2020-10-25 15:11:09'),
+(60, 1, 22, '2020-10-25 15:12:07'),
+(61, 1, 22, '2020-10-25 15:12:25'),
+(62, 3, 3, '2020-10-25 15:28:32'),
+(63, 3, 3, '2020-10-25 15:29:05'),
+(64, 3, 3, '2020-10-25 15:29:11'),
+(65, 2, 5, '2020-10-25 22:26:08'),
+(66, 4, 5, '2020-10-25 22:27:47'),
+(67, 4, 5, '2020-10-25 22:28:02'),
+(87, 3, 1, '2021-01-18 23:37:18'),
+(88, 3, 1, '2021-01-18 23:38:37'),
+(89, 3, 1, '2021-01-18 23:45:37'),
+(91, 4, 21, '2021-01-19 14:02:42'),
+(92, 4, 21, '2021-01-19 14:03:52'),
+(93, 4, 21, '2021-01-19 14:04:33'),
+(96, 3, 1, '2021-01-19 22:50:51'),
+(97, 4, 1, '2021-01-19 22:53:43'),
+(98, 5, 1, '2021-01-19 22:55:21');
 
 -- --------------------------------------------------------
 
@@ -129,20 +190,24 @@ INSERT INTO `descargas` (`id_descargas`, `id_descarga_partitura`, `id_descarga_u
 
 CREATE TABLE `estilo` (
   `id_estilo` int(11) NOT NULL,
-  `nombre_estilo` varchar(30) NOT NULL
+  `nombre_estilo` varchar(30) NOT NULL,
+  `editado` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `estilo`
 --
 
-INSERT INTO `estilo` (`id_estilo`, `nombre_estilo`) VALUES
-(1, 'Soft Rock'),
-(2, 'Latin Jazz'),
-(3, 'Modal Jazz'),
-(4, 'Barroco'),
-(5, 'Balada Pop Latino'),
-(6, 'Regional Mexicano');
+INSERT INTO `estilo` (`id_estilo`, `nombre_estilo`, `editado`) VALUES
+(1, 'Soft Rock', '2021-01-17 15:40:09'),
+(2, 'Latin Jazz ', '2021-01-17 15:36:44'),
+(3, 'Modal Jazz', NULL),
+(4, 'Barroco', '2021-01-17 15:31:37'),
+(5, 'Balada Pop Latino', '2021-01-17 15:31:13'),
+(6, 'Regional Mexicano', NULL),
+(7, 'Salsa', '2021-01-17 15:02:19'),
+(9, 'Merengue', '2021-01-17 15:04:08'),
+(10, 'Cumbia', '2021-01-17 15:39:34');
 
 -- --------------------------------------------------------
 
@@ -248,11 +313,11 @@ CREATE TABLE `partituras` (
 --
 
 INSERT INTO `partituras` (`id_partitura`, `nombre_partitura`, `nombre_artista`, `album`, `id_estilo`, `fecha_carga`, `no_descargas`, `editado`) VALUES
-(1, 'Amigos no por favor_gm.pdf', 'Yuridia', 'Primera Fila', 5, '2020-06-19 21:36:17', 0, '2020-06-19 21:36:18'),
-(2, 'Amor a primera vista_gm.pdf', 'Los Angeles Azules ft. Belinda', 'Amor a primera vista', 1, '2020-06-19 21:36:17', 0, '2020-06-19 21:36:18'),
-(3, 'Cantaloupe Island_gm.pdf', 'Herbie Hancock', ' Empyrean Isles', 3, '2020-06-19 21:45:03', 0, '2020-06-19 21:45:03'),
-(4, 'Colour my world_gm.pdf', 'Chicago', 'Chicago II ', 1, '2020-06-19 21:48:51', 0, '2020-06-19 21:48:51'),
-(5, 'Invenciones Bach_gm.pdf', 'Johan Sebastian Bach', 'Fuegas e Invenciones', 4, '2020-06-19 21:48:51', 0, '2020-06-19 21:48:51');
+(1, 'Amigos no por favor_gm.pdf', 'Yuridia', 'Primera Fila', 5, '2020-06-19 21:36:17', 3, '2021-01-18 22:54:40'),
+(2, 'Amor a primera vista_gm.pdf', 'Los Angeles Azules ft. Belinda', 'Amor a primera vista', 1, '2020-06-19 21:36:17', 1, '2021-01-18 22:55:50'),
+(3, 'Cantaloupe Island_gm.pdf', 'Herbie Hancock', ' Empyrean Isles', 3, '2020-06-19 21:45:03', 3, '2021-01-19 22:50:52'),
+(4, 'Colour my world_gm.pdf', 'Chicago', 'Chicago II ', 1, '2020-06-19 21:48:51', 5, '2021-01-19 22:53:43'),
+(5, 'Invenciones Bach_gm.pdf', 'Johan Sebastian Bach', 'Fuegas e Invenciones', 4, '2020-06-19 21:48:51', 2, '2021-01-19 22:55:21');
 
 -- --------------------------------------------------------
 
@@ -466,13 +531,13 @@ ALTER TABLE `categoria_evento`
 -- AUTO_INCREMENT de la tabla `descargas`
 --
 ALTER TABLE `descargas`
-  MODIFY `id_descargas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_descargas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT de la tabla `estilo`
 --
 ALTER TABLE `estilo`
-  MODIFY `id_estilo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_estilo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `eventos`
