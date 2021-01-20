@@ -53,17 +53,13 @@ $(function(){
     $('.nombre-sitio').lettering();
     
     
-    //Agregar clase a menu. Para indicar en el menu en que pagina nos encontramos
+    //Agregar clase a menu. Para indicar en el menu en que pagina nos encontramos (body.name, name es el archivo php en el que nos encontramos y a:contains('link') es el link de la navegación)
     $('body.index .navegacion-principal a:contains("Inicio")').addClass('activo');
-    $('body.conferencia .navegacion-principal a:contains("Descargas")').addClass('activo');
+    $('body.descargas .navegacion-principal a:contains("Partituras")').addClass('activo');
     $('body.calendario .navegacion-principal a:contains("Estadísticas")').addClass('activo');
-    $('body.invitados .navegacion-principal a:contains("Comentarios")').addClass('activo');
-   //$('body.registro .navegacion-principal a:contains("Inicio de sesión / Registro")').addClass('activo registro');
-    
-     
-    /*$('body.conferencia .navegacion-principal a:contains("Conferencia")').addClass('activo');
-     $('body.calendario .navegacion-principal a:contains("Calendario")').addClass('activo');
-     $('body.invitados .navegacion-principal a:contains("Invitados")').addClass('activo');*/
+    $('body.invitados .navegacion-principal a:contains("Contacto")').addClass('activo');
+    $('body.invitados .navegacion-principal a:contains("Mis descargas")').addClass('activo');
+   
     
 
      

@@ -239,10 +239,10 @@ session_start();
                 <a href="calendario.php">Estadísticas</a>
 
                 <?php if (!$_SESSION['nombre_usuario']) { ?>
-                    <a href="artistas.php">Contáctenos</a>
+                    <a href="contacto.php">Contáctenos</a>
                 <?php } else { ?>
 
-                    <a href="artistas.php">Mis descargas</a>
+                    <a href="mis-descargas.php">Mis descargas</a>
 
                 <?php } ?>
 
