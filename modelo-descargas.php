@@ -80,8 +80,8 @@ if(isset($_POST['insertar_descarga'])) { //agregar-admin es el input de tipo hid
                 //print_r($stmt);
                 //$id_registro2 = $stmt2->insert_id;
 
-                //$resultado->close();
-                //$resultado2->close();
+                $resultado->close();
+                $resultado2->close();
 
                
             if ($id_registro > 0 && !empty($stmt2->affected_rows)) {

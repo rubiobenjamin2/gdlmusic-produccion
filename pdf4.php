@@ -1,5 +1,5 @@
 <?php
-
+include_once 'includes/funciones/bd_conexion.php';
 
 session_start();
 $id_usuario = $_SESSION['id_usuario'];
@@ -13,8 +13,6 @@ $var_temp1 = str_replace(".pdf", "", $var_doc);
 $var_temp2 = str_replace("_gm", "", $var_temp1);
 $var_artista = $_GET['nom_artista'];
 $id_partitura = $_GET['id_partitura'];
-
-//NOTA:  ESTA PENDIENTE LA PARTE DEL VISOR PDF. SI SE QUEDA,  SE CREA UNA CONSULTA A LA BASE DE DATOS PARA SABER EL NO DE DESCARGAS Y ASI EVALUAR SI SE VISUALIZA O NO EL BOTON DE VISOR PDF
 
 /*echo "<pre>";
 var_dump($_GET);
@@ -33,16 +31,16 @@ include_once 'includes/templates/header.php';
 
 //SELECT COUNT(*) as resultado FROM descargas WHERE Cast(fecha_descarga AS date) = '2020-10-23' AND id_descarga_usuario = '21'
 
-/*if (isset($_POST['insertar_descarga'])) { // si se da submit al botón descargas para insertar en la tabla descargas
+//if (isset($_POST['insertar_descarga'])) { // si se da submit al botón descargas para insertar en la tabla descargas
 
     // Recuperamos el número de descargas de usuario por sesión
     //Hacemos un cast a date  a la fecha para eliminar las horas minutos y segundos
     try {
-        $sql = "SELECT COUNT(*) as cuenta FROM descargas WHERE Cast(fecha_descarga AS date) = '2020-10-22' AND id_descarga_usuario = '1'";
+    $sql = "SELECT COUNT(*) as cuenta FROM descargas WHERE Cast(fecha_descarga AS date) = CURRENT_DATE AND id_descarga_usuario = $id_usuario";
         $resultado = $conn->query($sql);
         //$filas  = $resultado->num_rows;
         $partitura = $resultado->fetch_assoc();
-        echo $partitura['cuenta'];
+        //echo $partitura['cuenta'];
         $num_descargas = $partitura['cuenta'];
 
         $resultado->close();
@@ -51,7 +49,8 @@ include_once 'includes/templates/header.php';
         echo "Error" . $e->getLine() . "<br>";
         $error = $e->getMessage();
         echo $error;
-    }*/
+    }
+   
 
 
 //Insertamos en tabla descargas id de partituras y usuarios para tener un control de descargas
@@ -112,10 +111,11 @@ include_once 'includes/templates/header.php';
                         <input type="hidden" name="id-partitura" value="<?php echo $id_partitura ?>">
                     </form>
                 </div>
-
+                <?php if($num_descargas < 3) {?>
                 <div id="btn-pdf">
                     <button id="ver-pdf" title="Ver">Visor PDF</button>
                 </div>
+                <?php } ?>
 
                 <div id="pager">
                     <button data-pager="prev">prev</button>
