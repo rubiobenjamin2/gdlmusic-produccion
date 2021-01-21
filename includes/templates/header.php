@@ -236,7 +236,7 @@ session_start();
             <nav class="navegacion-principal clearfix">
                 <a href="index.php">Inicio</a>
                 <a href="descargas.php">Partituras</a>
-                <a href="calendario.php">Estadísticas</a>
+                <a href="estadisticas.php">Estadísticas</a>
 
                 <?php if (!$_SESSION['nombre_usuario']) { ?>
                     <a href="contacto.php">Contáctenos</a>

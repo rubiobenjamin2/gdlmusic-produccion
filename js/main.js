@@ -57,8 +57,8 @@ $(function(){
     $('body.index .navegacion-principal a:contains("Inicio")').addClass('activo');
     $('body.descargas .navegacion-principal a:contains("Partituras")').addClass('activo');
     $('body.calendario .navegacion-principal a:contains("Estadísticas")').addClass('activo');
-    $('body.invitados .navegacion-principal a:contains("Contacto")').addClass('activo');
-    $('body.invitados .navegacion-principal a:contains("Mis descargas")').addClass('activo');
+    $('body.contacto .navegacion-principal a:contains("Contacto")').addClass('activo');
+    $('body.mis-descargas .navegacion-principal a:contains("Mis descargas")').addClass('activo');
    
     
 
