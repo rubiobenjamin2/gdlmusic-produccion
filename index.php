@@ -157,7 +157,7 @@
           </ul>
       </section> -->
 <!--seccion invitados-->
-
+<?php echo $counter; ?>
 <div class="contador parallax">
     <div class="contenedor">
         <ul class="resumen-evento clearfix">

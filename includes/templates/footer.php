@@ -40,7 +40,20 @@
     </div>
     <!--contenedor clearfix-->
     <p class="copyright">
-        Todos los Derechos Reservados © 2020 GDLMUSIC &#9835;
+        Todos los Derechos Reservados © 2020 GDLMUSIC &#9835; <br>
+       
+        <!-- Contador de Visias-->
+        Visitas: 
+        <?php
+        $fp = fopen("contador.txt", "r+");
+        $counter = fgets($fp, 7);
+        echo $counter;
+        $counter++;
+        rewind($fp);
+        fputs($fp, $counter);
+        fclose($fp);
+        echo "</b></p>";
+        ?>
     </p>
 
     <!-- formulario de mailchimp -->
