@@ -1,4 +1,13 @@
-<?php include_once 'includes/templates/header.php'; ?>
+<?php
+/*include_once 'includes/funciones/bd_conexion.php';
+//para comprobar que se ha conectado a la base de datos
+if ($conn->ping()) {
+    echo "Conectado";
+} else {
+    echo "No conectado";
+}
+$conn->close();*/
+include_once 'includes/templates/header.php'; ?>
 
 
 <!-- <section class="seccion contenedor">
@@ -14,6 +23,16 @@
  
           </Sólo>
       </section>seccion contenedor -->
+<?php
+
+/*$sql = "SELECT nombre_partitura FROM partituras ORDER BY no_descargas DESC";
+$resultado = $conn->query($sql);
+$registrados = $resultado->fetch_assoc();
+echo "<pre>";
+var_dump($registrados);
+echo "</pre><";*/
+//$conn->close();
+?>
 
 <section class="programa">
     <div class="contenedor-video">
@@ -25,6 +44,7 @@
     </div>
     <!--contenedor-video-->
 
+
     <div class="contenido-programa">
         <div class="contenedor">
             <div class="programa-evento">
@@ -35,10 +55,6 @@
                     <!-- <a href="#sesion"><i class="fa fa-code" aria-hidden="true"></i>Inicio de Sesión</a> -->
                     <!-- <a href="#mentoria"><i class="fa fa-code" aria-hidden="true"></i>Mentoria</a> -->
                 </nav>
-
-
-
-
 
 
                 <div id="gdlmusic" class="info-curso ocultar clearfix">
@@ -65,11 +81,9 @@
 
                 <div id="ranking" class="info-curso ocultar clearfix">
                     <div class="detalle-evento">
-                        <h3>En construcción</h3>
-                        <img src="img/construccion.jpg" alt="construccion">
+                        <!-- <h3>En construcción</h3>
+                        <img src="img/construccion.jpg" alt="construccion"> -->
 
-                        <?php //include_once'conferencia.php'; 
-                        ?>
                     </div>
 
                     <a href="admin/registro-usuario.php" class="button float-right">¡Sólo regístrate y listo!</a>
@@ -112,6 +126,7 @@
 ?>
 
 <?php include_once 'includes/templates/artistas2.php'; ?>
+<!-- De aquí obtenemos la conexión a la BBDD para la sección de Estadísticas -->
 
 
 <!-- <section class="invitados contenedor seccion">
@@ -157,27 +172,78 @@
           </ul>
       </section> -->
 <!--seccion invitados-->
-<?php echo $counter; ?>
+
+
+<!-- SECCIÓN DE ESTADÍSTICAS (parallax) -->
+
+<!-- Contador de visitas -->
+<?php
+$fp = fopen("contador.txt", "r+");
+$counter = fgets($fp, 7);
+//echo $counter;
+$counter++;
+rewind($fp);
+fputs($fp, $counter);
+fclose($fp);
+echo "</b></p>";
+?>
+<input type="hidden" id="var-contador" value="<?php echo $counter ?>">
+
+<!-- No. de  usuarios -->
+<?php
+$sql = "SELECT COUNT(*) AS registrados FROM usuarios";
+$resultado = $conn->query($sql);
+$registrados = $resultado->fetch_assoc();
+/*echo "<pre>";
+var_dump($registrados);
+echo "</pre>";*/
+?>
+<input type="hidden" id="var-usuarios" value="<?php echo $registrados['registrados'] ?>">
+
+<!-- No. de  partituras -->
+<?php
+$sql = "SELECT COUNT(*) AS partituras FROM partituras";
+$resultado = $conn->query($sql);
+$registrados = $resultado->fetch_assoc();
+/*echo "<pre>";
+var_dump($registrados);
+echo "</pre>";*/
+?>
+<input type="hidden" id="var-partituras" value="<?php echo $registrados['partituras'] ?>">
+
+<!-- No. de  descargas -->
+<?php
+$sql = "SELECT COUNT(*) AS descargas FROM descargas";
+$resultado = $conn->query($sql);
+$registrados = $resultado->fetch_assoc();
+/*echo "<pre>";
+var_dump($registrados);
+echo "</pre>";*/
+$conn->close(); //Cerramos la conexión a la BBDD
+?>
+<input type="hidden" id="var-descargas" value="<?php echo $registrados['descargas'] ?>">
+
+
 <div class="contador parallax">
     <div class="contenedor">
         <ul class="resumen-evento clearfix">
             <li>
-                <p class="numero">0</p>Invitados
+                <p class="numero">0</p>Visitas
             </li>
             <li>
-                <p class="numero">0</p>Talleres
+                <p class="numero">0</p>Usuarios
             </li>
             <li>
-                <p class="numero">0</p>Dias
+                <p class="numero">0</p>Partituras
             </li>
             <li>
-                <p class="numero">0</p>Conferencias
+                <p class="numero">0</p>Descargas
             </li>
         </ul>
     </div>
 
 </div>
-<!--contador parallax-->
+<!--SECCIÓN DE ESTADÍSTICAS (parallax)-->
 
 <section class="precios seccion">
     <h2>Precios</h2>

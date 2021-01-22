@@ -2,7 +2,11 @@
             
            try{
                require_once('includes/funciones/bd_conexion.php');
-             
+        /*if ($conn->ping()) {
+            echo "Conectado";
+        } else {
+            echo "No conectado";
+        }*/
                
               $sql = "SELECT * FROM artistas";
                
@@ -10,12 +14,13 @@
                
                
                $resultado=$conn->query($sql);
-               
-               
+
+        
            }catch(Exception $e){
                echo $e->getMessage();
                    
            }
+          
            
            ?>
 
@@ -180,6 +185,6 @@
 
 
 
- <?php
-           $conn->close();
+ <?php   //esta conexión no se cierra si no en el index porque ahi la seguimos usando
+           //$conn->close(); 
            ?>

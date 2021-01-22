@@ -40,20 +40,7 @@
     </div>
     <!--contenedor clearfix-->
     <p class="copyright">
-        Todos los Derechos Reservados © 2020 GDLMUSIC &#9835; <br>
-       
-        <!-- Contador de Visias-->
-        Visitas: 
-        <?php
-        $fp = fopen("contador.txt", "r+");
-        $counter = fgets($fp, 7);
-        echo $counter;
-        $counter++;
-        rewind($fp);
-        fputs($fp, $counter);
-        fclose($fp);
-        echo "</b></p>";
-        ?>
+        Todos los Derechos Reservados © 2020 GDLMUSIC &#9835;
     </p>
 
     <!-- formulario de mailchimp -->
@@ -74,7 +61,7 @@
         <div id="mc_embed_signup">
             <form action="https://facebook.us19.list-manage.com/subscribe/post?u=5009ca6753ea56561b465b171&amp;id=53fd42ce3a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                 <div id="mc_embed_signup_scroll">
-                    <h2>Suscríbete al Newsletter y no te pierdas nada de este evento</h2>
+                    <h2>Suscríbete al Newsletter</h2>
                     <div class="indicates-required"><span class="asterisk">*</span> es obligatorio</div>
                     <div class="mc-field-group">
                         <label for="mce-EMAIL">Correo Electrónico <span class="asterisk">*</span>

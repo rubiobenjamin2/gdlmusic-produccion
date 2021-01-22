@@ -728,7 +728,7 @@ div.contador{
     height: auto;
 }
 div.contador::before{
-    background-image: url(../img/bg-resumen.jpg);
+    background-image: url(../img/bg-resumen4.jpg);
     content: '';
 }
 ul.resumen-evento{
@@ -895,7 +895,7 @@ div.newsletter{
     height: auto;
 }
 div.newsletter::before{
-    background-image: url(../img/bg-newsletter.jpg);
+    background-image: url(../img/bg-resumen2.jpg);
     content: '';
 }
 div.newsletter .contenido{
@@ -1015,7 +1015,7 @@ div.contacto {
 }
 div.contacto a{
     font-family: 'Oswald', sans-serif;
-    color: #ffffff;
+    color: #fe4918;
     font-family: 'Oswald',sans-serif;
     font-size: 1.3em;
     text-transform: uppercase;
