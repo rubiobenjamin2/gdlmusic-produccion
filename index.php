@@ -1,13 +1,15 @@
 <?php
-/*include_once 'includes/funciones/bd_conexion.php';
+include_once 'includes/funciones/bd_conexion.php';
 //para comprobar que se ha conectado a la base de datos
-if ($conn->ping()) {
+/*if ($conn->ping()) {
     echo "Conectado";
 } else {
     echo "No conectado";
-}
-$conn->close();*/
-include_once 'includes/templates/header.php'; ?>
+}*/
+include_once 'includes/templates/header.php';
+
+
+?>
 
 
 <!-- <section class="seccion contenedor">
@@ -23,16 +25,7 @@ include_once 'includes/templates/header.php'; ?>
  
           </Sólo>
       </section>seccion contenedor -->
-<?php
 
-/*$sql = "SELECT nombre_partitura FROM partituras ORDER BY no_descargas DESC";
-$resultado = $conn->query($sql);
-$registrados = $resultado->fetch_assoc();
-echo "<pre>";
-var_dump($registrados);
-echo "</pre><";*/
-//$conn->close();
-?>
 
 <section class="programa">
     <div class="contenedor-video">
@@ -83,6 +76,57 @@ echo "</pre><";*/
                     <div class="detalle-evento">
                         <!-- <h3>En construcción</h3>
                         <img src="img/construccion.jpg" alt="construccion"> -->
+                        <?php
+
+                        $sql = "SELECT nombre_partitura, no_descargas FROM partituras ORDER BY no_descargas DESC LIMIT 0, 5";
+                        $resultado = $conn->query($sql);
+                        /*echo "<pre>";
+                        var_dump($registrados);
+                        echo "</pre>";*/
+                        //$conn->close();
+                        ?>
+                        <section class="content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="box">
+                                        <div class="box-header">
+                                            <h3 class="box-title">Las 10 partituras más descargadas</h3>
+                                        </div>
+                                        <!-- /.box-header -->
+                                        <div class="box-body no-padding">
+                                            <table class="table table-striped">
+                                                <!-- <thead class="thead-dark">
+                                                    <tr>
+                                                        <th style="width: 10px; font-size: 15px; font-family: 'Oswald', sans-serif">#</th>
+                                                        <th style="font-size: 15px; font-family: 'Oswald', sans-serif" class="h4">
+                                                            Partitura
+                                                        </th>
+                                                        <th style="width: 40px; font-size: 15px; font-family: 'Oswald', sans-serif" class="h4">Descargas</th>
+                                                    </tr>
+                                                </thead> -->
+                                                <tbody>
+                                                    <?php
+                                                    $i  = 1;
+                                                    while ($top = $resultado->fetch_assoc()) { ?>
+                                                        <tr>
+                                                            <td><?php echo $i; ?></td>
+                                                            <td><?php echo $top['nombre_partitura']; ?></td>
+                                                            <td><span class="badge bg-red"><?php echo $top['no_descargas']; ?></span></td>
+                                                        </tr>
+                                                    <?php $i++;
+                                                    } ?>
+
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                        <!-- /.box-body -->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+
 
                     </div>
 
@@ -191,34 +235,49 @@ echo "</b></p>";
 
 <!-- No. de  usuarios -->
 <?php
-$sql = "SELECT COUNT(*) AS registrados FROM usuarios";
-$resultado = $conn->query($sql);
-$registrados = $resultado->fetch_assoc();
-/*echo "<pre>";
+try {
+    $sql = "SELECT COUNT(*) AS registrados FROM usuarios";
+    $resultado = $conn->query($sql);
+    $registrados = $resultado->fetch_assoc();
+    /*echo "<pre>";
 var_dump($registrados);
 echo "</pre>";*/
+} catch (Exception $e) {
+    $error = $e->getMessage();
+    echo $error;
+}
 ?>
 <input type="hidden" id="var-usuarios" value="<?php echo $registrados['registrados'] ?>">
 
 <!-- No. de  partituras -->
 <?php
-$sql = "SELECT COUNT(*) AS partituras FROM partituras";
-$resultado = $conn->query($sql);
-$registrados = $resultado->fetch_assoc();
-/*echo "<pre>";
+try {
+    $sql = "SELECT COUNT(*) AS partituras FROM partituras";
+    $resultado = $conn->query($sql);
+    $registrados = $resultado->fetch_assoc();
+    /*echo "<pre>";
 var_dump($registrados);
 echo "</pre>";*/
+} catch (Exception $e) {
+    $error = $e->getMessage();
+    echo $error;
+}
 ?>
 <input type="hidden" id="var-partituras" value="<?php echo $registrados['partituras'] ?>">
 
 <!-- No. de  descargas -->
 <?php
-$sql = "SELECT COUNT(*) AS descargas FROM descargas";
-$resultado = $conn->query($sql);
-$registrados = $resultado->fetch_assoc();
-/*echo "<pre>";
+try {
+    $sql = "SELECT COUNT(*) AS descargas FROM descargas";
+    $resultado = $conn->query($sql);
+    $registrados = $resultado->fetch_assoc();
+    /*echo "<pre>";
 var_dump($registrados);
 echo "</pre>";*/
+} catch (Exception $e) {
+    $error = $e->getMessage();
+    echo $error;
+}
 $conn->close(); //Cerramos la conexión a la BBDD
 ?>
 <input type="hidden" id="var-descargas" value="<?php echo $registrados['descargas'] ?>">

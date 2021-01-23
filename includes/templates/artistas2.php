@@ -1,7 +1,7 @@
  <?php
             
            try{
-               require_once('includes/funciones/bd_conexion.php');
+              // require_once('includes/funciones/bd_conexion.php'); //esta conexión la comenté xq la estamos tomando del index.php
         /*if ($conn->ping()) {
             echo "Conectado";
         } else {

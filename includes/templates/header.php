@@ -42,7 +42,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
 
     <!-- Estilos ADMIN -->
-
+    
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="admin/css/bootstrap.min.css">
     <!-- Font Awesome -->
