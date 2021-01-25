@@ -22,7 +22,7 @@ include_once 'includes/templates/header.php';
                     <!-- LINE CHART -->
                     <div class="box box-info">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Gráfica de usuarios por mes</h3>
+                            <h3 class="box-title">Gráfica: Usuarios por mes</h3>
 
                         </div>
                         <div class="box-body">
@@ -49,16 +49,17 @@ include_once 'includes/templates/header.php';
                     <!-- LINE CHART -->
                     <div class="box box-info">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Gráfica de descargas por mes</h3>
+                            <h3 class="box-title">Gráfica: Descargas por mes</h3>
 
                         </div>
                         <div class="box-body">
                             <p style="font-size: 15px" class="text-center h4">
-                                16 Sep, 2020 - 24 Jun, 2021
+                                1
+                                22 Oct, 2020 - 20 Ene, 2021
                             </p>
 
                             <div class="chart">
-                                <canvas id="salesChart" style="height:250px"></canvas>
+                                <canvas id="descargasChart" style="height:250px"></canvas>
                             </div>
                         </div>
                         <!-- /.box-body -->

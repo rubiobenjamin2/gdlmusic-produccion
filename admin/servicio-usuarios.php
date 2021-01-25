@@ -16,7 +16,8 @@ while ($registro_dia = $resultado->fetch_assoc()) {
     var_dump($registro_dia);
     echo "</pre>";*/
     $fecha = $registro_dia['fecha'];
-    $registro['fecha'] = date('Y-m-d', strtotime($fecha)); //Eliminamos la hora minutos y segundos. Esta array $registro nose declara fuera xq se reescribe en cada iteración
+    //Quitamos el dia en la fecha para que nos grafique mejor en la parte responsiva
+    $registro['fecha'] = date('Y-m', strtotime($fecha)); //Eliminamos la hora minutos y segundos. Esta array $registro nose declara fuera xq se reescribe en cada iteración
     $registro['cantidad'] = $registro_dia['resultado'];
     
     //$registro['anios'] = $registro_dia['anio'];
