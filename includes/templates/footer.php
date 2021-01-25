@@ -115,11 +115,13 @@
 <script src="js/jquery.animateNumber.min.js"></script>
 <script src="js/jquery.lettering.js"></script>
 
+
 <!--Scripts ADMIN  -->
 <!-- jQuery 3 -->
 <!-- <script src="admin/js/jquery.min.js"></script> -->
 <!-- Bootstrap 3.3.7 -->
- <script src="admin/js/bootstrap.min.js"></script> 
+<script src="admin/js/bootstrap.min.js"></script>
+
 <!-- DATATABLES -->
 <script src="admin/js/jquery.dataTables.min.js"></script>
 <script src="admin/js/dataTables.bootstrap.min.js"></script>
@@ -130,13 +132,29 @@
 <!-- AdminLTE App -->
 <script src="admin/js/adminlte.min.js"></script>
 
-
-
-
-<!--  App.js -->
-<script src="admin/js/app.js"></script>
 <!-- bootstrap datepicker -->
 <script src="admin/js/bootstrap-datepicker.min.js"></script>
+<!-- Select2 -->
+<script src="admin/js/select2.full.min.js"></script>
+<!-- bootstrap time picker -->
+<script src="admin/js/bootstrap-timepicker.min.js"></script>
+<script src="admin/js/fontawesome-iconpicker.min.js"></script>
+
+
+
+
+<!-- AdminLTE for demo purposes -->
+<script src="admin/js/demo.js"></script>
+
+<!-- iCheck 1.0.1 -->
+<script src="admin/js/icheck.min.js"></script>
+<!-- ChartJS -->
+<script src="admin/js/Chart.min.js"></script>
+<!--  App.js -->
+<script src="admin/js/app.js"></script>
+
+
+
 
 
 

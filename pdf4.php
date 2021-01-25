@@ -33,7 +33,7 @@ include_once 'includes/templates/header.php';
 
 //if (isset($_POST['insertar_descarga'])) { // si se da submit al botón descargas para insertar en la tabla descargas
 
-    // Recuperamos el número de descargas de usuario por sesión
+    // Recuperamos el número de descargas de usuario por sesión. De acuerdo al número de descargas esta consulta es para habilitar el botón visor PDF
     //Hacemos un cast a date  a la fecha para eliminar las horas minutos y segundos
     try {
     $sql = "SELECT COUNT(*) as cuenta FROM descargas WHERE Cast(fecha_descarga AS date) = CURRENT_DATE AND id_descarga_usuario = $id_usuario";

@@ -51,10 +51,10 @@ include_once 'includes/templates/header.php'; ?>
                         <table id="registros" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>PDF</th>
-                                    <th>Título</th>
-                                    <th>Artista</th>
-                                    <th>Album</th>
+                                    <th style="font-size: 15px" class="h4">PDF</th>
+                                    <th style="font-size: 15px" class="h4">Título</th>
+                                    <th style="font-size: 15px" class="h4">Artista</th>
+                                    <th style="font-size: 15px" class="h4">Album</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -120,10 +120,10 @@ include_once 'includes/templates/header.php'; ?>
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>PDF</th>
-                                    <th>Título</th>
-                                    <th>Artista</th>
-                                    <th>Album</th>
+                                    <th style="font-size: 15px" class="h4">PDF</th>
+                                    <th style="font-size: 15px" class="h4">Título</th>
+                                    <th style="font-size: 15px" class="h4">Artista</th>
+                                    <th style="font-size: 15px" class="h4">Album</th>
                                 </tr>
                             </tfoot>
                         </table>

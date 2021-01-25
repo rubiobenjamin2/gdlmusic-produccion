@@ -56,7 +56,7 @@ $(function(){
     //Agregar clase a menu. Para indicar en el menu en que pagina nos encontramos (body.name, name es el archivo php en el que nos encontramos y a:contains('link') es el link de la navegación)
     $('body.index .navegacion-principal a:contains("Inicio")').addClass('activo');
     $('body.descargas .navegacion-principal a:contains("Partituras")').addClass('activo');
-    $('body.calendario .navegacion-principal a:contains("Estadísticas")').addClass('activo');
+    $('body.estadisticas .navegacion-principal a:contains("Estadísticas")').addClass('activo');
     $('body.contacto .navegacion-principal a:contains("Contacto")').addClass('activo');
     $('body.mis-descargas .navegacion-principal a:contains("Mis descargas")').addClass('activo');
    
@@ -123,7 +123,7 @@ $(function(){
     //
     
     //Animaciones para los nùmeros (parallax)
-    var resumenLista=jQuery('.resumen-evento');
+   /* var resumenLista=jQuery('.resumen-evento');
     var varContador = document.getElementById('var-contador').value;
     var varUsuarios = document.getElementById('var-usuarios').value;
     var varPartituras = document.getElementById('var-partituras').value;
@@ -139,7 +139,7 @@ $(function(){
          }, {
          offset: '60%'
      });
-    }
+    }*/
 
     
     

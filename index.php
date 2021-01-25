@@ -449,7 +449,7 @@ $conn->close(); //Cerramos la conexión a la BBDD
 
 
 <section class="seccion">
-    <h2>Fecha / Hora</h2>
+    <!--  <h2>Fecha / Hora</h2>
     <div class="cuenta-regresiva1 contenedor">
 
         <div class="reloj1">
@@ -472,9 +472,9 @@ $conn->close(); //Cerramos la conexión a la BBDD
 
 
 
-    </div>
+    </div> -->
     <!--cuenta-regresiva contenedor-->
-    <div class="cuenta-regresiva contenedor">
+    <!--  <div class="cuenta-regresiva contenedor">
 
 
         <div class="reloj">
@@ -499,8 +499,9 @@ $conn->close(); //Cerramos la conexión a la BBDD
 
 
 
-    </div>
+    </div> -->
     <!--cuenta-regresiva contenedor-->
+    <script src="js/animacion-numeros.js"></script>
 </section>
 <!--seccion-->
 
