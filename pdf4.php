@@ -111,11 +111,11 @@ include_once 'includes/templates/header.php';
                         <input type="hidden" name="id-partitura" value="<?php echo $id_partitura ?>">
                     </form>
                 </div>
-                <?php if($num_descargas < 3) {?>
-                <div id="btn-pdf">
+                <?php //if($num_descargas < 3) {?>
+                <!-- <div id="btn-pdf">
                     <button id="ver-pdf" title="Ver">Visor PDF</button>
-                </div>
-                <?php } ?>
+                </div> -->
+                <?php //} ?>
 
                 <div id="pager">
                     <button data-pager="prev">prev</button>

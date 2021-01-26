@@ -1,5 +1,5 @@
 <?php
-include_once 'funciones/sesiones.php';
+
 include_once 'funciones/funciones.php'; //conecta a la base de datos
 
 //$sql = "SELECT DATE(fecha_registro) AS fecha,COUNT(*) AS resultado FROM registrados GROUP BY DATE(fecha_registro) ORDER BY DATE(fecha_registro)" ;

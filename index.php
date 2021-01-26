@@ -220,6 +220,73 @@ include_once 'includes/templates/header.php';
 
 <!-- SECCIÓN DE ESTADÍSTICAS (parallax) -->
 
+<!-- Contador de visitas -->
+<?php
+$fp = fopen("contador.txt", "r+");
+$counter = fgets($fp, 7);
+//echo $counter;
+$counter++;
+rewind($fp);
+fputs($fp, $counter);
+fclose($fp);
+echo "</b></p>";
+
+?>
+<input type="hidden" id="var-contador" value="<?php echo $counter ?>">
+
+<!-- No. de  usuarios -->
+<?php
+try {
+    $sql = "SELECT COUNT(*) AS registrados FROM usuarios";
+    $resultado = $conn->query($sql);
+    $registrados = $resultado->fetch_assoc();
+    /*echo "<pre>";
+var_dump($registrados);
+echo "</pre>";*/
+
+
+} catch (Exception $e) {
+    $error = $e->getMessage();
+    echo $error;
+}
+?>
+<input type="hidden" id="var-usuarios" value="<?php echo $registrados['registrados'] ?>">
+
+<!-- No. de  partituras -->
+<?php
+try {
+    $sql = "SELECT COUNT(*) AS partituras FROM partituras";
+    $resultado = $conn->query($sql);
+    $registrados = $resultado->fetch_assoc();
+    /*echo "<pre>";
+var_dump($registrados);
+echo "</pre>";*/
+
+} catch (Exception $e) {
+    $error = $e->getMessage();
+    echo $error;
+}
+?>
+<input type="hidden" id="var-partituras" value="<?php echo $registrados['partituras'] ?>">
+
+<!-- No. de  descargas -->
+<?php
+try {
+    $sql = "SELECT COUNT(*) AS descargas FROM descargas";
+    $resultado = $conn->query($sql);
+    $registrados = $resultado->fetch_assoc();
+    /*echo "<pre>";
+var_dump($registrados);
+echo "</pre>";*/
+
+} catch (Exception $e) {
+    $error = $e->getMessage();
+    echo $error;
+}
+$conn->close(); //Cerramos la conexión a la BBDD
+?>
+<input type="hidden" id="var-descargas" value="<?php echo $registrados['descargas'] ?>">
+
 
 
 <div class="contador parallax">
@@ -446,11 +513,11 @@ echo "</pre>";*/
 
     </div> -->
     <!--cuenta-regresiva contenedor-->
-    <script src="js/animacion-numeros.js"></script>
+
 </section>
 <!--seccion-->
 
-
+<script src="js/animacion-numeros.js"></script>
 
 
 

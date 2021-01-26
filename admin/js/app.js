@@ -449,9 +449,7 @@ $('#icono').iconpicker();
 
   })
 
-  $.getJSON('info-visitas.php', function (data) { //recibo los datos actualizados de info-visitas.php
-    console.log(data);
-  })
+  
  
 
   })  

@@ -18,7 +18,6 @@ $arreglo_datos = array();
 // Contador de visitas 
 
 
-
 $fp = fopen("contador.txt", "r+");
 $counter = fgets($fp, 7);
 //echo $counter;
@@ -95,4 +94,4 @@ $conn->close(); //Cerramos la conexión a la BBDD
  var_dump(json_encode($arreglo_datos));
  echo "</pre>";*/
 echo json_encode($arreglo_datos);
-?>
+
