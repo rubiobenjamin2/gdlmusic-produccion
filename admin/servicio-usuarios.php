@@ -31,4 +31,3 @@ while ($registro_dia = $resultado->fetch_assoc()) {
     echo "</pre>";*/
    
     echo json_encode($arreglo_registros);
-?>

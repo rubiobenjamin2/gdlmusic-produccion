@@ -44,7 +44,7 @@ include_once 'includes/templates/header.php';
                 <h2>Principales</h2>
                 <nav class="menu-programa">
                     <a href="#gdlmusic"><i class="fa fa-code" aria-hidden="true"></i>GdlMusic</a>
-                    <a href="#ranking"><i class="fa fa-code" aria-hidden="true"></i>Ranking Descargas</a>
+                    <a href="#ranking"><i class="fa fa-code" aria-hidden="true"></i>Descargas Ranking</a>
                     <!-- <a href="#sesion"><i class="fa fa-code" aria-hidden="true"></i>Inicio de Sesión</a> -->
                     <!-- <a href="#mentoria"><i class="fa fa-code" aria-hidden="true"></i>Mentoria</a> -->
                 </nav>
@@ -220,67 +220,6 @@ include_once 'includes/templates/header.php';
 
 <!-- SECCIÓN DE ESTADÍSTICAS (parallax) -->
 
-<!-- Contador de visitas -->
-<?php
-$fp = fopen("contador.txt", "r+");
-$counter = fgets($fp, 7);
-//echo $counter;
-$counter++;
-rewind($fp);
-fputs($fp, $counter);
-fclose($fp);
-echo "</b></p>";
-?>
-<input type="hidden" id="var-contador" value="<?php echo $counter ?>">
-
-<!-- No. de  usuarios -->
-<?php
-try {
-    $sql = "SELECT COUNT(*) AS registrados FROM usuarios";
-    $resultado = $conn->query($sql);
-    $registrados = $resultado->fetch_assoc();
-    /*echo "<pre>";
-var_dump($registrados);
-echo "</pre>";*/
-} catch (Exception $e) {
-    $error = $e->getMessage();
-    echo $error;
-}
-?>
-<input type="hidden" id="var-usuarios" value="<?php echo $registrados['registrados'] ?>">
-
-<!-- No. de  partituras -->
-<?php
-try {
-    $sql = "SELECT COUNT(*) AS partituras FROM partituras";
-    $resultado = $conn->query($sql);
-    $registrados = $resultado->fetch_assoc();
-    /*echo "<pre>";
-var_dump($registrados);
-echo "</pre>";*/
-} catch (Exception $e) {
-    $error = $e->getMessage();
-    echo $error;
-}
-?>
-<input type="hidden" id="var-partituras" value="<?php echo $registrados['partituras'] ?>">
-
-<!-- No. de  descargas -->
-<?php
-try {
-    $sql = "SELECT COUNT(*) AS descargas FROM descargas";
-    $resultado = $conn->query($sql);
-    $registrados = $resultado->fetch_assoc();
-    /*echo "<pre>";
-var_dump($registrados);
-echo "</pre>";*/
-} catch (Exception $e) {
-    $error = $e->getMessage();
-    echo $error;
-}
-$conn->close(); //Cerramos la conexión a la BBDD
-?>
-<input type="hidden" id="var-descargas" value="<?php echo $registrados['descargas'] ?>">
 
 
 <div class="contador parallax">
@@ -302,6 +241,12 @@ $conn->close(); //Cerramos la conexión a la BBDD
     </div>
 
 </div>
+<?php
+/*echo "<pre>";
+var_dump (json_encode($arreglo_datos));
+echo "</pre>";*/
+//echo json_encode($arreglo_datos);
+?>
 <!--SECCIÓN DE ESTADÍSTICAS (parallax)-->
 
 <section class="precios seccion">

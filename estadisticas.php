@@ -130,6 +130,9 @@ include_once 'includes/templates/header.php';
     </div>
 
     <script src="js/salto-barra.js"></script>
+    
+
+
 </section>
 
 <?php include_once 'includes/templates/footer.php'; ?>
