@@ -2,9 +2,11 @@
 if(isset($_POST['login-admin'])) {
     //die(json_encode($_POST));
     //datso enviados desde ajax
-    $usuario = $_POST['usuario'];
+    //htmlentities convierte cualquier simbolo en html. addslashes escapa cualquier caracter extraño como barras y comillas y no tomarlas en cuenta. 
+    //Con el objetivo de evitar un poco mas la inyecciónsql
+    $usuario = htmlentities(addslashes($_POST['usuario']));
     
-    $password = $_POST['password'];
+    $password = htmlentities(addslashes($_POST['password']));
     
 
     try {

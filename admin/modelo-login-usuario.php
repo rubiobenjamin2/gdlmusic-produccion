@@ -1,11 +1,12 @@
 <?php
 
 if (isset($_POST['login-usuario'])) {
-   // die(json_encode($_POST));
-    
-    $usuario = $_POST['usuario'];
+    // die(json_encode($_POST));
+    //htmlentities convierte cualquier simbolo en html. addslashes escapa cualquier caracter extraño como barras y comillas y no tomarlas en cuenta. 
+    //Con el objetivo de evitar un poco mas la inyecciónsql
+    $usuario = htmlentities(addslashes($_POST['usuario']));
 
-    $password = $_POST['password'];
+    $password = htmlentities(addslashes($_POST['password']));
 
 
     try {
