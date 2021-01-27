@@ -3,16 +3,17 @@
 # Useful .gitignore templates: https://github.com/github/gitignore
 
 # Directorios
-archivos_pdf/
-build/
-doc/
-images/
-video/
-webfonts/
-fonts/
-pdf/
+#archivos_pdf/
+#build/
+#doc/
+#images/
+#video/
+#webfonts/
+#fonts/
+#pdf/
 includes/paypal/
 includes/paypal.php
+# includes/funciones/bd_conexion.php
 
 
 # Archivos
