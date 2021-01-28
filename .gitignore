@@ -17,7 +17,7 @@ includes/paypal.php
 
 
 # Archivos
-*.txt 
+#*.txt 
 
 ## SOURCE CODE
 pagar.php            
