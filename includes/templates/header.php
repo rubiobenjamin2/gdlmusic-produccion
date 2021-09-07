@@ -33,7 +33,7 @@ session_start();
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
 
-     <link rel="stylesheet" href="css/normalize.css"> 
+     <link rel="stylesheet" href="css/normalize.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" integrity="sha256-HxaKz5E/eBbvhGMNwhWRPrAR9i/lG1JeT4mD6hCQ7s4=" crossorigin="anonymous" />
 
     <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
@@ -42,9 +42,9 @@ session_start();
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
 
     <!-- Estilos ADMIN -->
-    
+
     <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="admin/css/bootstrap.min.css">
+    <link rel="stylesheet" href="admin/css/bootstrap.min.css" media="screen">
     <!-- Font Awesome -->
     <!-- <link rel="stylesheet" href="admin/css/font-awesome.min.css"> -->
     <!-- Ionicons -->
@@ -83,7 +83,7 @@ session_start();
 
     <!-- Google Font -->
     <!--  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous"> -->
 
     <!-- FIN de Estilos ADMIN -->
@@ -258,3 +258,4 @@ session_start();
         <!--contenedor-->
     </div>
     <!--barra-->
+
