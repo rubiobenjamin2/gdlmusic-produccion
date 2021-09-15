@@ -9,7 +9,7 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-
+yyyy
 html {
     color: #222;
     font-size: 1em;
@@ -99,7 +99,7 @@ textarea {
 
 html{
     box-sizing: border-box;
-    
+
 }
 *,*:before,*:after{
     box-sizing: inherit;
@@ -115,11 +115,11 @@ body{
 .contenedor{
     width: 95%;
     margin: 0 auto;
-    
+
 }
 @media only screen and (min-width:480px){
     .contenedor{
-    width: 95%;    
+    width: 95%;
 }
 }
 @media only screen and (min-width:768px) {
@@ -129,8 +129,8 @@ body{
 }
 @media only screen and (min-width:992px){
     .contenedor{
-    width: 1100px;  
-    
+    width: 1100px;
+
 }
 }
 .seccion{
@@ -147,8 +147,8 @@ div.reg {
     text-transform: uppercase;
     font-size: 1.3em;
     margin-bottom: 15px;
-    
-    
+
+
 }
 h2{
     /*font-family: 'PT Sans', sans-serif;*/
@@ -160,7 +160,7 @@ h2{
 }
 h2::after{
     content: '';
-    margin: 0 auto; 
+    margin: 0 auto;
     background-image: url(../img/separador.png);
     height: 30px;
     width: 100px;
@@ -171,7 +171,7 @@ h3{
     color: #fe4918;
     font-family: 'PT Sans', sans-serif;
     margin: 0;
-    
+
 }
 .button{
     background-color: #fe4918;
@@ -191,7 +191,7 @@ h3{
 .button.hollow:hover{
     background-color: white;
     color: #fe4918;
-    
+
 }
 .button.transparente{
     background-color: transparent;
@@ -221,7 +221,7 @@ h1.nombre-sitio span{
 @media only screen and (min-width:992px){
     .char1{
         top: 20px; right: 20px;
-        
+
     }
     .char2{
         top: 0px; left: -20px;
@@ -245,7 +245,7 @@ h1.nombre-sitio span{
         top: 0px; left: 10px;
     }
     .char9{
-        top: 10px; right: 20px; 
+        top: 10px; right: 20px;
     }
     .char10{
         top: 20px; right: -7px;
@@ -289,8 +289,8 @@ div.informacion-evento{
       width: 70%;
       margin: 0 auto;
       margin-top: 50px;
-   
-}  
+
+}
 }
 div.informacion-evento p{
     margin: 0;
@@ -327,7 +327,7 @@ div.slogan1{
 
 }
 p.slogan{
-    
+
     text-transform: none!important;
 }
 p.slogan span{
@@ -335,20 +335,20 @@ p.slogan span{
     font-size: 28px;
 }
 h1.nombre-sitio{
-   
+
     font-size: 5.9vw;
     text-transform: uppercase;
     font-family: 'PT Sans', sans-serif;
 }
 @media only screen and (min-width:768px){
    h1.nombre-sitio{
-    
+
     font-size: 11.5vw;
     margin: 0;
     line-height: 1;
-    
-    
-} 
+
+
+}
 
 
 }
@@ -364,7 +364,7 @@ div.barra{
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 2; 
+    z-index: 2;
 }
 
 @media only screen and (max-width:480px){
@@ -377,7 +377,7 @@ div.barra{
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 2; 
+    z-index: 2;
 }
 }
 
@@ -391,7 +391,7 @@ div.barra{
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 2; 
+    z-index: 2;
 }
 }
 
@@ -405,7 +405,7 @@ div.barra{
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 2; 
+    z-index: 2;
 }
 }
 
@@ -420,7 +420,7 @@ div.logo img{
 @media only screen and (min-width:768px){
     div.logo {
     width: 33%;
-        
+
 }
 }
 
@@ -428,7 +428,7 @@ div.logo img{
 /*nav.navegacion-principal{
     display: none;
     width: 100%;
-    
+
 }*/
 nav.navegacion-principal {
     display: none;
@@ -446,11 +446,11 @@ nav.navegacion-principal a{
     display: block;
     text-align: center;
     margin-bottom: 20px;
-    
+
 }
 nav.navegacion-principal a:hover{
     background-color: #fe4918;
-    
+
 }
 nav.navegacion-principal a:last-child{
     border: 2px solid #fe4918;
@@ -462,9 +462,9 @@ nav.navegacion-principal a:last-child:hover{
 /*@media only screen and (min-width:768px){
     nav.navegacion-principal{
     width: 67%;
-    float: right; 
+    float: right;
     text-align: right;
-    display: block;    
+    display: block;
    }
     nav.navegacion-principal a{
         margin-right: 10px;
@@ -535,7 +535,7 @@ section.programa{
 div.contenedor-video{
     max-width: 100%;
     overflow-x: hidden;
-    
+
 }
 div.contenedor-video video {
     width: 1920px;
@@ -553,26 +553,26 @@ div.programa-evento{
     background-color: rgba(255,255,255,0.8);
     padding: 15px;
     margin-top: 80px;
-    
+
 }
 @media only screen and (min-width:768px){
    div.programa-evento{
     width: 70%;
-    
-} 
+
+}
 }
 @media only screen and (min-width:992px){
    div.programa-evento{
     width: 50%;
-    
-    
-} 
+
+
+}
 }
 
 nav.menu-programa{
     width: 100%;
-    
-    
+
+
 }
 @media only screen and (min-width:768px){
     nav.menu-programa{
@@ -604,13 +604,13 @@ nav.menu-programa a.activo::after{
     background-position: top center;
     background-repeat: no-repeat;
     bottom: -20px;
-    
+
 }
 @media only screen and (min-width:768px){
     nav.menu-programa a{
         display: table-cell;
-    } 
-    
+    }
+
 }
 nav.menu-programa a i,
 div.detalle-evento p i{
@@ -633,7 +633,7 @@ div.detalle-evento{
     margin-top: 20px;
     border-bottom: 1px solid #fe4918;
     padding: 0 20px;
-    
+
 }
 div.detalle-evento:nth-child(2){
     border: none;
@@ -653,7 +653,7 @@ div.detalle-evento p {
 div.detalle-evento h3 {
     text-align: center;
     font-family: 'Oswald', sans-serif;
-} 
+}
 b {
     font-weight: bold;
 }
@@ -683,14 +683,14 @@ div.invitado img{
     filter: gray;
     -webkit-filter: grayscale(1);
     -webkit-transition:all .5s ease-in-out;
-    
+
 }
 div.invitado:hover img{
-    
+
     -webkit-filter: grayscale(0);
     -webkit-transform: scale(1.1);
-    
-    
+
+
 }
 div.invitado p{
     position: absolute;
@@ -737,7 +737,7 @@ div.contador::before{
 ul.resumen-evento{
     position: relative;
     padding: 120px 0;
-    
+
 }
 ul.resumen-evento li{
     width: 50%;
@@ -783,7 +783,7 @@ div.tabla-precio:hover{
     transform: scale(1.1);
     border: 1px solid #fe4918;
     box-shadow: 0 0 50px #666;
-    
+
 }
 
 div.tabla-precio ul li{
@@ -808,7 +808,7 @@ div.tabla-precio h3{
     font-family: 'Oswald', sans-serif;
     font-size: 16px;
     text-transform: uppercase;
-     
+
 }
 div.tabla-precio p.numero{
     color: #000000;
@@ -826,7 +826,7 @@ div.mapa{
 
 div.testimoniales{
     padding: 20px;
-    
+
 }
 div.testimonial{
     padding: 5px;
@@ -835,7 +835,7 @@ div.testimonial{
     div.testimonial{
     float: left;
     width: 33.3%;
-    
+
 }
 }
 
@@ -865,7 +865,7 @@ blockquote p::before{
 }
 footer.info-testimonial{
     padding: 0;
-    
+
 }
 footer.info-testimonial img{
     float: left;
@@ -906,7 +906,7 @@ div.newsletter .contenido{
     color: #ffffff;
     text-align: center;
     position: relative;
-    
+
 }
 div.newsletter .contenido p{
     font-size: 1.2em;
@@ -940,15 +940,15 @@ div.cuenta-regresiva1 ul li{
         /*float: left;*/
         text-align: center;
         display: inline-block;
-       
-        
+
+
     }
     div.cuenta-regresiva1 ul li{
         width: 10%;
         float: left;
         font-size: .3rem;
-        
-        
+
+
     }
     div.reloj1 {
         margin-left: 400px;
@@ -958,8 +958,8 @@ div.cuenta-regresiva1 ul li{
         margin-left: 350px;
 
     }
-    
-    
+
+
 }
 
 
@@ -979,13 +979,13 @@ footer .contenedor > div{
     color: #ffffff;
     padding: 0px 20px;
     font-size: 12px;
-    
+
 }
 @media only screen and (min-width:768px){
     footer .contenedor > div{
         width: 33.3%;
         float: left;
-    } 
+    }
 }
 footer h3{
     color: #ffffff;
@@ -1012,7 +1012,7 @@ p.copyright{
 }
 
 div.contacto {
-    
+
     width: 100%;
     margin-top: 94px;
 }
@@ -1029,11 +1029,11 @@ div.contacto a{
     text-align: center;
     margin-bottom: 20px;
     border: 2px solid #fe4918;
-    
+
 }
 div.contacto a:hover{
     background-color: #fe4918;
-     
+
 }
 
 
@@ -1101,7 +1101,7 @@ div.contacto a:hover{
 /**Conferencia**/
 .navegacion-principal .activo{
     border-bottom: 2px solid #fe4918;
-    
+
 }
 div.galeria a{
     display: inline-block;
@@ -1132,7 +1132,7 @@ div.caja{
     margin: 10px;
 }
 div.campo{
-  padding: 20px;  
+  padding: 20px;
 }
 @media only screen and (min-width:768px){
     div.campo{
@@ -1193,7 +1193,7 @@ div.resumen div.extras{
     float: left;
     width: 50%;
     padding: 30px;
-} 
+}
 div.extras div.orden{
     text-align: left;
     margin-bottom: 10px;
@@ -1254,7 +1254,7 @@ div.dia{
     div.dia{
     width: 33.3%;
     min-height: 240px;
-    padding-top: 20px;    
+    padding-top: 20px;
 }
 }
 div.dia:hover{
@@ -1302,7 +1302,7 @@ div.cboxElement{
 
 
 
-/* 
+/*
 ==========================================================================
    Helper classes
    ========================================================================== */
