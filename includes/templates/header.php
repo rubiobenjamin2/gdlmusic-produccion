@@ -45,6 +45,7 @@ session_start();
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
 
+
     <!-- Estilos ADMIN -->
 
     <!-- Bootstrap 3.3.7 -->
@@ -176,6 +177,7 @@ session_start();
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
+
     <header class="site-header">
         <div class="hero">
             <div class="contenido-header">
@@ -190,11 +192,11 @@ session_start();
                     <div class="clearfix">
                         <p class="fecha"><i class="fa fa-calendar" aria-hidden="true"></i>
                             <!-- <p id="fecha_diaSemana" class="fechas"></p> -->
-                            <p id="fecha_dia" class="fechas"></p>
-                            <p class="separacion">/</p>
-                            <p id="fecha_mes" class="fechas"></p>
-                            <p class="separacion">/</p>
-                            <p id="fecha_anio" class="fechas"></p>
+                        <p id="fecha_dia" class="fechas"></p>
+                        <!-- <p class="separacion">/</p> -->
+                        <p id="fecha_mes" class="fechas"></p>
+                        <!-- <p class="separacion">/</p> -->
+                        <p id="fecha_anio" class="fechas"></p>
                         </p>
 
 
@@ -203,24 +205,33 @@ session_start();
 
                     <h1 class="nombre-sitio">GdlMusic &#9835;</h1>
 
-                    <div class="slogan1">
+
+                </div>
+                <!--.informacion-evento-->
+
+                    <div class="usuario-sl">
                         <?php if ($_SESSION['nombre_usuario']) { ?>
-                            <p class="slogan"><span> ¡ Hola <?php echo $_SESSION['nombre_usuario']; ?> !</span></p><br>
+                            <p class="slogan1"><span> ¡ Hola <?php echo $_SESSION['nombre_usuario']; ?> !</span></p><br>
                         <?php }  ?>
 
                         <p class="slogan">Descarga Partituras en formato <span> PDF</span></p>
                     </div>
-                    <!--.slogan1-->
-                </div>
-                <!--.informacion-evento-->
+                    <!--.usuario-sl-->
 
             </div>
             <!--contenido-header-->
 
+
+
+
+
         </div>
         <!--.hero-->
 
+
     </header>
+
+
     <!-- Con el enlace muesta desde este punto la página -->
     <a name="enlace"></a>
     <div class="barra">

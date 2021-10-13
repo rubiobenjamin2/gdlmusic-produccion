@@ -101,9 +101,11 @@ html{
     box-sizing: border-box;
 
 }
-*,*:before,*:after{
+*, *:before, *:after{
     box-sizing: inherit;
 }
+
+/*Las linea de arriba son paara evitar problemas con los paddings en los modelos de cajas*/
 
 body{
     background-color: #f2f2f2;
@@ -217,7 +219,42 @@ ul{
 h1.nombre-sitio span{
     position: relative;
     text-shadow: 0 0 30px black;
+
 }
+
+ .char1{
+        top: 20px; right: 20px;
+
+    }
+    .char2{
+        top: 0px; left: -20px;
+    }
+    .char3{
+        top: 10px; right: 20px;
+    }
+    .char4{
+        top: 5px; right: 10px;
+    }
+    .char5{
+        top: 15px; right: 10px;
+    }
+    .char6{
+        top: 5px; left: 10px;
+    }
+    .char7{
+        top: 20px; left: 10px;
+    }
+    .char8{
+        top: 0px; left: 10px;
+    }
+    .char9{
+        top: 10px; right: 20px;
+    }
+    .char10{
+        top: 20px; right: -7px;
+    }
+
+
 @media only screen and (min-width:992px){
     .char1{
         top: 20px; right: 20px;
@@ -252,15 +289,87 @@ h1.nombre-sitio span{
     }
 }
 
+@media only screen and (min-width:768px){
+    .char1{
+        top: 20px; right: 20px;
+
+    }
+    .char2{
+        top: 0px; left: -20px;
+    }
+    .char3{
+        top: 10px; right: 20px;
+    }
+    .char4{
+        top: 5px; right: 10px;
+    }
+    .char5{
+        top: 15px; right: 10px;
+    }
+    .char6{
+        top: 5px; left: 10px;
+    }
+    .char7{
+        top: 20px; left: 10px;
+    }
+    .char8{
+        top: 0px; left: 10px;
+    }
+    .char9{
+        top: 10px; right: 20px;
+    }
+    .char10{
+        top: 20px; right: -7px;
+    }
+}
+
+@media only screen and (min-width:480px){
+    .char1{
+        top: 20px; right: 20px;
+
+    }
+    .char2{
+        top: 0px; left: -20px;
+    }
+    .char3{
+        top: 10px; right: 20px;
+    }
+    .char4{
+        top: 5px; right: 10px;
+    }
+    .char5{
+        top: 15px; right: 10px;
+    }
+    .char6{
+        top: 5px; left: 10px;
+    }
+    .char7{
+        top: 20px; left: 10px;
+    }
+    .char8{
+        top: 0px; left: 10px;
+    }
+    .char9{
+        top: 10px; right: 20px;
+    }
+    .char10{
+        top: 20px; right: -7px;
+    }
+}
+
+
+
 
 /** Header **/
 
 div.hero{
     background-image: url(../img/musica10.jpg);
-    height: 100vh;
+    height: 100vh; /*Hace que la imagen cubra toda la pantalla hacia lo alto*/
+    /*height: 500px ;*/
     background-position: center;
     background-size: cover;
 }
+
 div.contenido-header{
     padding-top: 40px;
 }
@@ -280,20 +389,43 @@ nav.redes-sociales a{
 nav.redes-sociales a:last-child{
     margin-right: 0;
 }
+
+/* información evento */
+
 div.informacion-evento{
     text-align: center;
     color: #ffffff;
-}
-@media only screen and (min-width:768px){
-  div.informacion-evento{
-      width: 70%;
-      margin: 0 auto;
-      margin-top: 50px;
+
+     width: 70%;
+     margin: 0 auto;
+     margin-top: 50px;
+
 
 }
+
+div.informacion-evento p.ciudad{
+    font-size: .7em;
+    padding-top: 3px;
 }
+
+div.informacion-evento p.fechas{
+    font-size: .7em;
+}
+
+/*div.informacion-evento .fechas{
+    display: none;
+}
+
+div.informacion-evento .fecha i{
+    display: none;
+}*/
+
+
+
+
 div.informacion-evento p{
-    margin: 0;
+    /*margin: 0;*/
+
     display: inline;
     font-size: 20px;
     text-transform: uppercase;
@@ -312,7 +444,8 @@ p.separacion{
 }
 div.informacion-evento p i{
     color: #fe4918;
-    font-size: 2.4rem;
+    /*font-size: 2.4rem;*/
+    font-size: 1.3rem;
     margin-right: 4px;
 }
 p.fecha{
@@ -321,22 +454,54 @@ p.fecha{
 p.ciudad{
     float: right;
     text-align: right;
+
 }
-div.slogan1{
+
+
+div.usuario-sl{
+    text-align: center;
+    color: #ffffff;
+    width: 70%;
+    margin: 0 auto;
     margin-top: 120px;
 
 }
-p.slogan{
 
+/*div.usuario-sl p.slogan{*/
+    /*margin: 0;*/
+    /*margin-top: 150px;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}*/
+
+/*p.slogan1 span{
+    margin-bottom: 40px;
+}*/
+
+
+div.usuario-sl p.slogan{
+
+    margin-top: 150px;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    border: 3px solid #fe4918;
+    border-radius: 20px;
+    padding: 7px;
     text-transform: none!important;
 }
-p.slogan span{
+div.usuario-sl p.slogan span{
     font-weight: bold;
-    font-size: 28px;
+    font-size: 20px;
 }
 h1.nombre-sitio{
 
-    font-size: 5.9vw;
+    font-size: 11.5vw;
     text-transform: uppercase;
     font-family: 'PT Sans', sans-serif;
 }
@@ -344,20 +509,71 @@ h1.nombre-sitio{
    h1.nombre-sitio{
 
     font-size: 11.5vw;
-    margin: 0;
+   /* margin: 0;*/
+
     line-height: 1;
 
+}
+
+}
+
+@media only screen and (min-width: 480px){
+    div.informacion-evento  {
+      width: 70%;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
 
 }
 
 
+@media only screen and (min-width:768px){
+  div.informacion-evento{
+      width: 70%;
+      margin: 0 auto;
+      margin-top: 50px;
+
 }
+
+div.informacion-evento p.ciudad{
+    font-size: 1em;
+
+}
+
+div.informacion-evento p.fechas{
+    font-size: 1em;
+    padding-top: 5px;
+}
+}
+
+@media only screen and (min-width:992px){
+  div.informacion-evento{
+      width: 70%;
+      margin: 0 auto;
+      margin-top: 50px;
+      font-size: 20px;
+
+}
+
+div.informacion-evento p i{
+    color: #fe4918;
+    font-size: 2.4rem;
+    margin-right: 4px;
+}
+
+div.informacion-evento p.fechas{
+    padding-top: 13px;
+}
+}
+
+
 
 /** Barra**/
 
 div.barra{
     background-color: #353535;
     padding: 20px 0;
+
 }
 .fixed{
     position: fixed; /* lo deja en una posición fija */
@@ -399,6 +615,7 @@ div.barra{
    div.barra{
     background-color: #353535;
     padding: 20px 0;
+
 }
 .fixed{
     position: fixed; /* lo deja en una posición fija */
