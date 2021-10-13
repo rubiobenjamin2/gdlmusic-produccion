@@ -493,7 +493,7 @@ div.usuario-sl p.slogan{
     border: 3px solid #fe4918;
     border-radius: 20px;
     padding: 7px;
-    text-transform: none!important;
+    /*text-transform: none!important;*/
 }
 div.usuario-sl p.slogan span{
     font-weight: bold;
