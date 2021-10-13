@@ -499,6 +499,93 @@ div.usuario-sl p.slogan span{
     font-weight: bold;
     font-size: 20px;
 }
+
+@media (min-width: 480px){
+    div.usuario-sl{
+    text-align: center;
+    color: #ffffff;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 120px;
+
+}
+div.usuario-sl p.slogan{
+
+    margin-top: 150px;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    border: 3px solid #fe4918;
+    border-radius: 20px;
+    padding: 7px;
+    /*text-transform: none!important;*/
+}
+div.usuario-sl p.slogan span{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+}
+@media (min-width: 768px){
+    div.usuario-sl{
+    text-align: center;
+    color: #ffffff;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 120px;
+
+}
+div.usuario-sl p.slogan{
+
+    margin-top: 150px;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    border: 3px solid #fe4918;
+    border-radius: 20px;
+    padding: 7px;
+    /*text-transform: none!important;*/
+}
+div.usuario-sl p.slogan span{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+}
+@media (min-width: 992px){
+    div.usuario-sl{
+    text-align: center;
+    color: #ffffff;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 120px;
+
+}
+div.usuario-sl p.slogan{
+
+    margin-top: 150px;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    border: 3px solid #fe4918;
+    border-radius: 20px;
+    padding: 7px;
+    /*text-transform: none!important;*/
+}
+div.usuario-sl p.slogan span{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+}
+
+
 h1.nombre-sitio{
 
     font-size: 11.5vw;
@@ -517,7 +604,7 @@ h1.nombre-sitio{
 
 }
 
-@media only screen and (min-width: 480px){
+@media (min-width: 480px){
     div.informacion-evento  {
       width: 70%;
       margin: 0 auto;
@@ -527,13 +614,13 @@ h1.nombre-sitio{
 }
 
 
-@media only screen and (min-width:768px){
+@media (min-width:768px){
   div.informacion-evento{
       width: 70%;
       margin: 0 auto;
       margin-top: 50px;
 
-}
+  }
 
 div.informacion-evento p.ciudad{
     font-size: 1em;
@@ -546,7 +633,7 @@ div.informacion-evento p.fechas{
 }
 }
 
-@media only screen and (min-width:992px){
+@media (min-width:992px){
   div.informacion-evento{
       width: 70%;
       margin: 0 auto;
